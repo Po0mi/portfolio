@@ -11,7 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter+Tight:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="stylesheet"
@@ -22,67 +25,81 @@
   </head>
   <body>
     <div class="hero-wrapper">
-    <nav class="navbar">
-      <ul class="navbar-nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#Projects">Projects</a></li>
-        <li><a href="#Skills">Skills</a></li>
-        <li><a href="#Contacts">Contacts</a></li>
-      </ul>
-    </nav>
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <li><a href="#about-skills">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about-skills">Skills</a></li>
+          <li><a href="#Contacts">Contacts</a></li>
+        </ul>
+      </nav>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <div class="indicator">
-            <hr />
-            <h2>ヒーロー</h2>
-          </div>
-          <div class="sub-text"><h3>UI/UX Desinger</h3></div>
-          <div class="title"><h1>WEBSITE</h1></div>
-          <div class="title2"><h2>PORTFOLIO</h2></div>
+      <main>
+        <section class="hero">
+          <div class="container">
+            <div class="scrolldown">
+              <div class="chevrons">
+                <div class="chevrondown"></div>
+                <div class="chevrondown"></div>
+              </div>
+            </div>
+            <div class="indicator">
+              <hr />
+              <h2>ヒーロー</h2>
+            </div>
+            <div class="sub-text"><h3>UI/UX Desinger</h3></div>
+            <div class="title"><h1>WEBSITE</h1></div>
+            <div class="title2"><h2>PORTFOLIO</h2></div>
 
-          <div class="soc-med">
-            <div class="socials">
-              <a
-                href="#"
-                data-social="Facebook"
-                aria-label="Facebook"
-                class="fa-brands fa-facebook-f"
-              ></a>
-              <a
-                href="#"
-                data-social="Twitter"
-                aria-label="Twitter"
-                class="fa-brands fa-x-twitter"
-              ></a>
-              <a
-                href="#"
-                data-social="GitHub"
-                aria-label="GitHub"
-                class="fa-brands fa-github"
-              ></a>
-              <a
-                href="#"
-                data-social="Instagram"
-                aria-label="Instagram"
-                class="fa-brands fa-instagram"
-              ></a>
+            <div class="soc-med">
+              <div class="socials">
+                <a
+                  href="#"
+                  data-social="Facebook"
+                  aria-label="Facebook"
+                  class="fa-brands fa-facebook-f"
+                ></a>
+                <a
+                  href="#"
+                  data-social="Twitter"
+                  aria-label="Twitter"
+                  class="fa-brands fa-x-twitter"
+                ></a>
+                <a
+                  href="#"
+                  data-social="GitHub"
+                  aria-label="GitHub"
+                  class="fa-brands fa-github"
+                ></a>
+                <a
+                  href="#"
+                  data-social="Instagram"
+                  aria-label="Instagram"
+                  class="fa-brands fa-instagram"
+                ></a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      </section> 
-    </main>
-      <div class="about-wrapper">
-      <section id="about" class="about">
+        </section>
+      </main>
+    </div>
+
+    <div class="about-wrapper">
+      <section id="about-skills"  class="about">
         <div class="container-about">
-          <div class="indicator-about">
+          <div class="indicator-skills">
+            <h2>ヒーロー</h2>
             <hr />
-            <h2>
-について</h2>
+            <h2>スキル</h2>
           </div>
           <div class="about-me"><h1>ABOUT</h1></div>
+          <div class="skills-intro">
+            <h3>My Technical Arsenal</h3>
+            <p>
+              A curated collection of technologies and tools that I use to bring
+              ideas to life through code and design.
+            </p>
+          </div>
           <div class="text-content">
             <h2>Who Am I?</h2>
             <p>Hello, my name is <b>Dan Gabrielle De Castro.</b></p>
@@ -108,163 +125,160 @@
                 Tzu</i
               >
             </p>
+            <div class="button">
+              <a
+                href="#"
+                
+                ><span>DOWNLOAD CV</span></a
+              >
+            </div>
+                 <div class="stats-grid">
+                  <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Years Study</div>
+                    </div>
+                      <div class="stat-item">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                        <div class="stat-item">
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                 </div>
+                 
           </div>
-          </div>
+
+                <div class="skills-grid" id="skillsGrid">
+                    <div class="skill-card" data-category="frontend">
+                        <i class="fab fa-html5 skill-icon html"></i>
+                        <div class="skill-name">HTML</div>
+                        <div class="skill-level">Advanced</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="frontend">
+                        <i class="fab fa-css3-alt skill-icon css"></i>
+                        <div class="skill-name">CSS</div>
+                        <div class="skill-level">Advanced</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="frontend">
+                        <i class="fab fa-js skill-icon js"></i>
+                        <div class="skill-name">JavaScript</div>
+                        <div class="skill-level">Intermediate</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="frontend">
+                        <i class="fab fa-react skill-icon react"></i>
+                        <div class="skill-name">React</div>
+                        <div class="skill-level">Intermediate</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="backend">
+                        <i class="fab fa-python skill-icon python"></i>
+                        <div class="skill-name">Python</div>
+                        <div class="skill-level">Intermediate</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="backend">
+                        <i class="fab fa-php skill-icon php"></i>
+                        <div class="skill-name">PHP</div>
+                        <div class="skill-level">Intermediate</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="frontend">
+                        <i class="fab fa-flutter skill-icon flutter"></i>
+                        <div class="skill-name">Flutter</div>
+                        <div class="skill-level">Beginner</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="tools">
+                        <i class="fab fa-figma skill-icon figma"></i>
+                        <div class="skill-name">Figma</div>
+                        <div class="skill-level">Intermediate</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-category="tools">
+                        <i class="fab fa-github skill-icon github"></i>
+                        <div class="skill-name">GitHub</div>
+                        <div class="skill-level">Intermediate</div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </section>
-      <div class="skills-wrapper">
-         <section id="skills" class="skills">
-        <div class="container-skills">  
-            <div class="indicator-skills">
-            <h2>
-スキル</h2><hr /></div>
-    <div class="skills-intro">
-            <h3>My Technical Arsenal</h3>
-            <p>A curated collection of technologies and tools that I use to bring ideas to life through code and design.</p>
+
+    <div class="projects-wrapper">
+      <section id="projects" class="projects">
+        <div class="container-projects">
+                <div class="indicator-skills">
+            <hr />
+            <h2>プロジェクト</h2>
           </div>
-          <div class="skills-title"><h1>SKILLS</h1>
-        </div> 
-    <div class="card1">
-  <i class="fa-brands fa-html5"></i>
-  <div class="card-content">
-    <h2>HTML</h2>
-    <span class="jp-text">エイチティーエムエル</span>
-  </div>
-</div>
-<div class="card2">
-  <i class="fa-brands fa-css3-alt"></i>
-  <div class="card-content">
-    <h2>CSS</h2>
-    <span class="jp-text">シーエスエス</span>
-  </div>
-</div>
-<div class="card3">
-  <i class="fa-brands fa-php"></i>
-  <div class="card-content">
-    <h2>PHP</h2>
-    <span class="jp-text">ピーエイチピー</span>
-  </div>
-</div>
-<div class="card4">
-  <i class="fa-brands fa-python"></i>
-  <div class="card-content">
-    <h2>PYTHON</h2>
-    <span class="jp-text">パイソン</span>
-  </div>
-</div>
-<div class="card5">
-  <i class="fa-brands fa-js"></i>
-  <div class="card-content">
-    <h2>JS</h2>
-    <span class="jp-text">ジェイエス</span>
-  </div>
-</div>
-<div class="card6">
-  <i class="fa-brands fa-github"></i>
-  <div class="card-content">
-    <h2>GITHUB</h2>
-    <span class="jp-text">ジェイエス</span>
-  </div>
-</div>
-<div class="card7">
-  <i class="fa-brands fa-react"></i>
-  <div class="card-content">
-    <h2>REACT</h2>
-    <span class="jp-text">ジェイエス</span>
-  </div>
-</div>
-<div class="card8">
-  <i class="fa-brands fa-figma"></i>
-  <div class="card-content">
-    <h2>FIGMA</h2>
-    <span class="jp-text">ジェイエス</span>
-  </div>
-</div>
-<div class="card9">
-  <i class="fa-brands fa-flutter"></i>
-  <div class="card-content">
-    <h2>FLUTTER</h2>
-    <span class="jp-text">ジェイエス</span>
-  </div>
-</div>
-     <div class="skills-progress">
-            <h3 class="progress-title">Proficiency Levels</h3>
-            <div class="progress-grid">
-              <div class="progress-item">
-                <div class="progress-header">
-                  <span class="progress-name">HTML/CSS</span>
-                  <span class="progress-percentage">90%</span>
+               <div class="projects-title"><h1>PROJECTS</h1></div>
+                <div class="featured-project">
+                         <div class="featured-bg"></div>
+                             <div class="featured-header">
+                            <h3 class="featured-title">Web-base Manangement System</h3>
+                            <p class="featured-subtitle">Full-Stack Web Application</p>
+                        </div>
+                                       <div class="featured-details">
+                            <p class="featured-description">
+                                A comprehensive e-commerce solution built with modern technologies. Features include real-time inventory management, secure payment processing with Stripe integration, user authentication system, responsive design, and an intuitive admin dashboard for managing products and orders.
+                            </p>
+                            
+                            <div class="featured-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">Stripe API</span>
+                            </div>
+                            
+                            <div class="featured-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Live Demo
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="progress-bar">
-                  <div class="progress-fill html" style="width: 90%;"></div>
                 </div>
-              </div>
-              <div class="progress-item">
-                <div class="progress-header">
-                  <span class="progress-name">JavaScript</span>
-                  <span class="progress-percentage">85%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill js" style="width: 85%;"></div>
-                </div>
-              </div>
-              <div class="progress-item">
-                <div class="progress-header">
-                  <span class="progress-name">React</span>
-                  <span class="progress-percentage">80%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill react" style="width: 80%;"></div>
-                </div>
-              </div>
-              <div class="progress-item">
-                <div class="progress-header">
-                  <span class="progress-name">Python</span>
-                  <span class="progress-percentage">75%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill python" style="width: 75%;"></div>
-                </div>
-              </div>
-              <div class="progress-item">
-                <div class="progress-header">
-                  <span class="progress-name">PHP</span>
-                  <span class="progress-percentage">70%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill php" style="width: 70%;"></div>
-                </div>
-              </div>
-              <div class="progress-item">
-                <div class="progress-header">
-                  <span class="progress-name">UI/UX Design</span>
-                  <span class="progress-percentage">88%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill css" style="width: 88%;"></div>
-                </div>
-              </div>
-                  <div class="progress-item">
-                <div class="progress-header">
-                  <span class="progress-name">Flutter</span>
-                  <span class="progress-percentage">50%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill css" style="width: 50%;"></div>
-                </div>
-              </div>
-                 <div class="progress-item">
-                <div class="progress-header">
-                  <span class="progress-name">GitHub</span>
-                  <span class="progress-percentage">50%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill css" style="width: 50%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
+        </div>
       </section>
+    </div>
+    
   </body>
 </html>
