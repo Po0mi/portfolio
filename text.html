@@ -3,125 +3,141 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+    <title>GSAP Particles</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <style>
       body {
-        /*fullscree center but no horizontal scrollbar*/
-        background-color: darkslategray;
-        display: flex;
+        margin: 0;
+        padding: 0;
+        background: #1a1a1a;
         height: 100vh;
-        width: 100vw;
-        max-width: 100vw;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        overflow-x: hidden;
-      }
-      /* copy from here */
-      .scrolldown {
-        --color: white;
-        --sizeX: 30px;
-        --sizeY: 50px;
+        overflow: hidden;
         position: relative;
-        width: var(--sizeX);
-        height: var(--sizeY);
-        margin-left: var(sizeX / 2);
-        border: calc(var(--sizeX) / 10) solid var(--color);
-        border-radius: 50px;
-        box-sizing: border-box;
-        margin-bottom: 16px;
       }
 
-      .scrolldown::before {
-        content: "";
+      .particles-container {
         position: absolute;
-        bottom: 30px;
-        left: 50%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(179, 17, 17, 0.8);
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(179, 17, 17, 0.4);
+      }
+
+      .particle.large {
         width: 6px;
         height: 6px;
-        margin-left: -3px;
-        background-color: var(--color);
-        border-radius: 100%;
-        animation: scrolldown-anim 2s infinite;
-        box-sizing: border-box;
-        box-shadow: 0px -5px 3px 1px #ffffff66;
+        background: rgba(189, 178, 178, 0.6);
+        box-shadow: 0 0 8px rgba(189, 178, 178, 0.3);
       }
 
-      @keyframes scrolldown-anim {
-        0% {
-          opacity: 0;
-          height: 6px;
-        }
-        40% {
-          opacity: 1;
-          height: 10px;
-        }
-        80% {
-          transform: translate(0, 20px);
-          height: 10px;
-          opacity: 0;
-        }
-        100% {
-          height: 3px;
-          opacity: 0;
-        }
-      }
-      .chevrons {
-        padding: 6px 0 0 0;
-        margin-left: -3px;
-        margin-top: 48px;
-        width: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .chevrondown {
-        margin-top: -6px;
+      /* Demo content */
+      .content {
         position: relative;
-        border: solid var(--color);
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        transform: rotate(45deg);
+        z-index: 10;
+        color: #bdcdd6;
+        text-align: center;
+        padding: 50px;
+        margin-top: 30vh;
       }
-      .chevrondown:nth-child(odd) {
-        animation: pulse 500ms ease infinite alternate;
+
+      .content h1 {
+        font-size: 3rem;
+        color: #b31111;
+        margin-bottom: 1rem;
       }
-      .chevrondown:nth-child(even) {
-        animation: pulse 500ms ease infinite alternate 250ms;
+
+      .content p {
+        font-size: 1.2rem;
+        opacity: 0.8;
+        max-width: 600px;
+        margin: 0 auto;
       }
-      @keyframes pulse {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 0.5;
-        }
-      }
-      /*copy until here */
     </style>
-    <div class="scrolldown">
-      <div class="chevrons">
-        <div class="chevrondown"></div>
-        <div class="chevrondown"></div>
-      </div>
+  </head>
+  <body>
+    <div class="particles-container" id="particles"></div>
+
+    <div class="content">
+      <h1>GSAP Particles</h1>
+      <p>Smooth GSAP-powered particles with natural movement and easing.</p>
     </div>
 
-    <div class="scrolldown" style="--color: yellow">
-      <div class="chevrons">
-        <div class="chevrondown"></div>
-        <div class="chevrondown"></div>
-      </div>
-    </div>
+    <script>
+      function createParticle() {
+        const particle = document.createElement("div");
+        particle.className =
+          Math.random() > 0.7 ? "particle large" : "particle";
 
-    <div class="scrolldown" style="--color: coral">
-      <div class="chevrons">
-        <div class="chevrondown"></div>
-        <div class="chevrondown"></div>
-      </div>
-    </div>
+        // Random horizontal position
+        const startX = Math.random() * window.innerWidth;
+        particle.style.left = startX + "px";
+        particle.style.top = window.innerHeight + "px";
+
+        document.getElementById("particles").appendChild(particle);
+
+        // GSAP animation with more natural movement
+        const tl = gsap.timeline();
+
+        tl.fromTo(
+          particle,
+          {
+            y: 0,
+            x: 0,
+            opacity: 0,
+            scale: 0.5,
+          },
+          {
+            y: -(window.innerHeight + 100),
+            x: gsap.utils.random(-50, 50), // Random horizontal drift
+            opacity: 1,
+            scale: 1,
+            duration: gsap.utils.random(12, 18),
+            ease: "none",
+          }
+        ).to(
+          particle,
+          {
+            opacity: 0,
+            scale: 0.5,
+            duration: 2,
+            ease: "power2.out",
+          },
+          "-=2"
+        );
+
+        // Add subtle floating motion
+        gsap.to(particle, {
+          x: "+=" + gsap.utils.random(-20, 20),
+          duration: gsap.utils.random(3, 6),
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        });
+
+        // Remove particle after animation
+        tl.call(() => {
+          if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+          }
+        });
+      }
+
+      // Create particles at intervals
+      gsap.delayedCall(0, function createParticleLoop() {
+        createParticle();
+        gsap.delayedCall(gsap.utils.random(0.5, 1.2), createParticleLoop);
+      });
+    </script>
   </body>
 </html>

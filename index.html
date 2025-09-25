@@ -20,10 +20,31 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css"/>
   </head>
   <body>
+
+    <div class="loader-overlay" id="loader">
+        <div class="kanji-loader">
+            <div class="kanji-container">
+   
+                <div class="kanji-stroke stroke-1"></div>
+                <div class="kanji-stroke stroke-2"></div>
+                <div class="kanji-stroke stroke-3"></div>
+                <div class="kanji-stroke stroke-4"></div>
+                <div class="kanji-stroke stroke-5"></div>
+                
+        
+                <div class="kanji-character">道</div>
+            </div>
+            
+            <div class="loading-text">
+                Loading...
+                <div class="japanese-text">道 - dō (the way)</div>
+            </div>
+        </div>
+    </div>
+      <div class="particles-container" id="particles"></div>
     <div class="hero-wrapper">
       <nav class="navbar">
         <ul class="navbar-nav">
@@ -37,17 +58,17 @@
       <main>
         <section class="hero">
           <div class="container">
+            
             <div class="scrolldown">
-              <div class="chevrons">
-                <div class="chevrondown"></div>
-                <div class="chevrondown"></div>
-              </div>
             </div>
             <div class="indicator">
               <hr />
               <h2>ヒーロー</h2>
             </div>
             <div class="sub-text"><h3>UI/UX Desinger</h3></div>
+              <div class="sub-text3"><h3>
+情熱と精度をもってデジタル体験を創造する</h3></div>
+             <div class="sub-text2"><h3>Crafting digital experiences with passion and precision</h3></div>
             <div class="title"><h1>WEBSITE</h1></div>
             <div class="title2"><h2>PORTFOLIO</h2></div>
 
@@ -234,51 +255,174 @@
             </div>
         </div>
       </section>
+ <div class="projects-wrapper">
+        <section id="projects" class="projects">
+            <div class="container-projects">
+                <div class="indicator-project">
+                    <hr />
+                    <h2>プロジェクト</h2>
+                </div>
+                                 <div class="project-intro">
+            <h3>My collection of projects</h3>
+            <p>
+              Here are some of my recent projects and work.
+            </p>
+                          </div>
+                <div class="projects-title">
+                    <h1>PROJECTS</h1>
+                </div>
 
-    <div class="projects-wrapper">
-      <section id="projects" class="projects">
-        <div class="container-projects">
-                <div class="indicator-skills">
-            <hr />
-            <h2>プロジェクト</h2>
-          </div>
-               <div class="projects-title"><h1>PROJECTS</h1></div>
-                <div class="featured-project">
-                         <div class="featured-bg"></div>
-                             <div class="featured-header">
-                            <h3 class="featured-title">Web-base Manangement System</h3>
-                            <p class="featured-subtitle">Full-Stack Web Application</p>
+                <div class="projects-grid">
+           
+                    <div class="project-card main">
+                        <div class="project-image" style="background-image: url('images/project.png');"></div>
+                        <div class="project-basic">
+                            <h3 class="project-title">Web Base Management System</h3>
+                            <p class="project-type">Full-Stack Application</p>
                         </div>
-                                       <div class="featured-details">
-                            <p class="featured-description">
-                                A comprehensive e-commerce solution built with modern technologies. Features include real-time inventory management, secure payment processing with Stripe integration, user authentication system, responsive design, and an intuitive admin dashboard for managing products and orders.
+                        <div class="project-details">
+                            <p class="project-description">
+                                Modern Web Base management system with secure payments, inventory management, and admin dashboard.
                             </p>
-                            
-                            <div class="featured-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">Express</span>
-                                <span class="tech-tag">Stripe API</span>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
                             </div>
-                            
-                            <div class="featured-links">
-                                <a href="#" class="project-link">
+                            <div class="project-links">
+                                <a href="https://philippineredcross-iloilochapter.org" class="project-link">
                                     <i class="fas fa-external-link-alt"></i>
-                                    Live Demo
+                                    Live
                                 </a>
-                                <a href="#" class="project-link">
+                                <a href="https://github.com/Po0mi/prc_management" class="project-link">
                                     <i class="fab fa-github"></i>
                                     GitHub
                                 </a>
                             </div>
                         </div>
                     </div>
+
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('images/project2.png');"></div>
+                        <div class="project-basic">
+                            <h3 class="project-title">Portfolio Project</h3>
+                            <p class="project-type">Website</p>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">
+                                Project Portfolio for a friend featuring modern design and interactive elements.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                  <a href="https://po0mi.github.io/project" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Live
+                                </a>
+                                <a href="https://github.com/Po0mi/project" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    Source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('images/project3.png');"></div>
+                        <div class="project-basic">
+                            <h3 class="project-title">Black Jack Game</h3>
+                            <p class="project-type">Game</p>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">
+                                A simple Black jack game with intuitive UI using Python and modern design principles.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Po0mi/Simple-python-blackjack" class="project-link">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </a>
+                                <a href="https://github.com/Po0mi/Simple-python-blackjack" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    Source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('images/project4.png');"></div>
+                        <div class="project-basic">
+                            <h3 class="project-title">School Project Portfolio</h3>
+                            <p class="project-type">Website</p>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">
+                                Academic portfolio project showcasing web development skills and design capabilities.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                 <a href="https://po0mi.github.io/De-Castro_Finals" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Live
+                                </a>
+                                <a href="https://github.com/Po0mi/De-Castro_Finals" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    Source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                               <div class="project-card">
+                        <div class="project-image" style="background-image: url('images/project5.jpg');"></div>
+                        <div class="project-basic">
+                            <h3 class="project-title">Python Calculator</h3>
+                            <p class="project-type">Desktop App</p>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">
+                               A fully functional calculator application built with Python featuring basic arithmetic operations, advanced mathematical functions, and an intuitive GUI interface using Tkinter.
+                            </p>
+                            <div class="project-tech">
+                                              <span class="tech-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Po0mi/calculator" class="project-link">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </a>
+                                <a href="https://github.com/Po0mi/calculator" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    Source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>
-        </div>
-      </section>
+            </div>
+        </section>
     </div>
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+     <script src="js/loader.js"></script>
+      <script src="js/particles.js"></script>
+            <script src="js/scroll.js"></script>
+                <script src="js/smooth-scroll.js"></script>
+                <script src="js/parallax.js"></script>
+              
+                   
+
   </body>
 </html>
