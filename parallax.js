@@ -1,8 +1,6 @@
-// Simple text parallax
 function initTextParallax() {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero text elements move at different speeds
   gsap.to(".title", {
     yPercent: -20,
     ease: "none",
@@ -36,7 +34,6 @@ function initTextParallax() {
     },
   });
 
-  // About section text
   gsap.to(".about-me", {
     yPercent: -15,
     ease: "none",
@@ -48,7 +45,6 @@ function initTextParallax() {
     },
   });
 
-  // Projects section text
   gsap.to(".projects-title", {
     yPercent: -12,
     ease: "none",
@@ -61,5 +57,4 @@ function initTextParallax() {
   });
 }
 
-// Initialize
 document.addEventListener("DOMContentLoaded", initTextParallax);

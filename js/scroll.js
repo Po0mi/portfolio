@@ -1,19 +1,15 @@
-// Enhanced scroll indicator with ScrollTrigger
 function initScrollIndicator() {
   const scrollIndicator = document.querySelector(".scrolldown");
   const heroSection = document.querySelector(".hero");
 
   if (!scrollIndicator || !heroSection) return;
 
-  // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
-  // Add progress bar element
   const progressBar = document.createElement("div");
   progressBar.className = "scroll-progress";
   scrollIndicator.appendChild(progressBar);
 
-  // Create pulsing animation timeline
   const pulseTimeline = gsap.timeline({ repeat: -1, yoyo: true });
 
   pulseTimeline

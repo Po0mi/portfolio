@@ -1,9 +1,6 @@
-// Smooth scroll-triggered animations between sections
 function initSectionScrollAnimations() {
-  // Register ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);
 
-  // Smooth scrolling for navigation links
   function initSmoothScrolling() {
     const navLinks = document.querySelectorAll(".navbar a");
 
@@ -27,7 +24,6 @@ function initSectionScrollAnimations() {
     });
   }
 
-  // Hero section exit animation
   function initHeroExitAnimation() {
     const heroElements = {
       title: document.querySelector(".title"),
@@ -38,7 +34,6 @@ function initSectionScrollAnimations() {
       indicator: document.querySelector(".indicator"),
     };
 
-    // Create exit timeline
     ScrollTrigger.create({
       trigger: ".hero",
       start: "top top",
@@ -47,31 +42,26 @@ function initSectionScrollAnimations() {
       onUpdate: (self) => {
         const progress = self.progress;
 
-        // Parallax effect on title
         gsap.set(heroElements.title, {
           y: progress * -100,
           opacity: 1 - progress * 1.5,
         });
 
-        // Fade subtitle with different timing
         gsap.set(heroElements.subtitle, {
           y: progress * -50,
           opacity: 1 - progress * 1.2,
         });
 
-        // Slide out description
         gsap.set(heroElements.description, {
           x: progress * -100,
           opacity: 1 - progress * 0.8,
         });
 
-        // Japanese text special effect
         gsap.set(heroElements.japanese, {
           x: progress * 100,
           opacity: 1 - progress * 0.8,
         });
 
-        // Socials fade down
         gsap.set(heroElements.socials, {
           y: progress * 50,
           opacity: 1 - progress,
@@ -80,7 +70,6 @@ function initSectionScrollAnimations() {
     });
   }
 
-  // About section entrance animation
   function initAboutSectionAnimation() {
     const aboutTitle = document.querySelector(".about-me");
     const skillsIntro = document.querySelector(".skills-intro");
@@ -88,7 +77,6 @@ function initSectionScrollAnimations() {
     const skillCards = document.querySelectorAll(".skill-card");
     const statsItems = document.querySelectorAll(".stat-item");
 
-    // About title reveal
     gsap.fromTo(
       aboutTitle,
       {
@@ -110,7 +98,6 @@ function initSectionScrollAnimations() {
       }
     );
 
-    // Skills intro animation
     gsap.fromTo(
       skillsIntro,
       {
@@ -130,7 +117,6 @@ function initSectionScrollAnimations() {
       }
     );
 
-    // Text content slide in
     gsap.fromTo(
       textContent,
       {
@@ -150,7 +136,6 @@ function initSectionScrollAnimations() {
       }
     );
 
-    // Skill cards staggered animation
     gsap.fromTo(
       skillCards,
       {
@@ -177,7 +162,6 @@ function initSectionScrollAnimations() {
       }
     );
 
-    // Stats counter animation
     statsItems.forEach((item, index) => {
       const number = item.querySelector(".stat-number");
       const originalText = number.textContent;
@@ -187,7 +171,6 @@ function initSectionScrollAnimations() {
         trigger: item,
         start: "top 80%",
         onEnter: () => {
-          // Animate the number counting up
           gsap.fromTo(
             { value: 0 },
             {
@@ -204,7 +187,6 @@ function initSectionScrollAnimations() {
             }
           );
 
-          // Scale animation
           gsap.fromTo(
             item,
             {
@@ -226,13 +208,11 @@ function initSectionScrollAnimations() {
     });
   }
 
-  // Projects section animation
   function initProjectsSectionAnimation() {
     const projectsTitle = document.querySelector(".projects-title");
     const projectIntro = document.querySelector(".project-intro");
     const projectCards = document.querySelectorAll(".project-card");
 
-    // Projects title reveal
     gsap.fromTo(
       projectsTitle,
       {
@@ -254,7 +234,6 @@ function initSectionScrollAnimations() {
       }
     );
 
-    // Project intro slide in
     gsap.fromTo(
       projectIntro,
       {
@@ -274,7 +253,6 @@ function initSectionScrollAnimations() {
       }
     );
 
-    // Project cards cascading animation
     projectCards.forEach((card, index) => {
       const isMainCard = card.classList.contains("main");
 
@@ -315,7 +293,6 @@ function initSectionScrollAnimations() {
     });
   }
 
-  // Section transition effects
   function initSectionTransitions() {
     const sections = [".hero", ".about", ".projects"];
 
@@ -332,7 +309,6 @@ function initSectionScrollAnimations() {
           const progress = self.progress;
           const currentSection = document.querySelector(selector);
 
-          // Fade current section
           gsap.set(currentSection, {
             opacity: 1 - progress * 0.3,
             scale: 1 - progress * 0.05,
@@ -342,7 +318,6 @@ function initSectionScrollAnimations() {
     });
   }
 
-  // Parallax background effects
   function initParallaxBackgrounds() {
     const wrappers = document.querySelectorAll(
       ".hero-wrapper, .about-wrapper, .projects-wrapper"
@@ -366,7 +341,6 @@ function initSectionScrollAnimations() {
     });
   }
 
-  // Initialize all animations
   initSmoothScrolling();
   initHeroExitAnimation();
   initAboutSectionAnimation();
@@ -374,16 +348,13 @@ function initSectionScrollAnimations() {
   initSectionTransitions();
   initParallaxBackgrounds();
 
-  // Refresh ScrollTrigger on window resize
   window.addEventListener("resize", () => {
     ScrollTrigger.refresh();
   });
 }
 
-// Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", initSectionScrollAnimations);
 
-// Also refresh after loader completes
 window.addEventListener("load", () => {
   setTimeout(() => {
     ScrollTrigger.refresh();
