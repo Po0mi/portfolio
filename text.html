@@ -1,143 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GSAP Particles</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: #1a1a1a;
-        height: 100vh;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .particles-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 0;
-      }
-
-      .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(179, 17, 17, 0.8);
-        border-radius: 50%;
-        box-shadow: 0 0 6px rgba(179, 17, 17, 0.4);
-      }
-
-      .particle.large {
-        width: 6px;
-        height: 6px;
-        background: rgba(189, 178, 178, 0.6);
-        box-shadow: 0 0 8px rgba(189, 178, 178, 0.3);
-      }
-
-      /* Demo content */
-      .content {
-        position: relative;
-        z-index: 10;
-        color: #bdcdd6;
-        text-align: center;
-        padding: 50px;
-        margin-top: 30vh;
-      }
-
-      .content h1 {
-        font-size: 3rem;
-        color: #b31111;
-        margin-bottom: 1rem;
-      }
-
-      .content p {
-        font-size: 1.2rem;
-        opacity: 0.8;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="particles-container" id="particles"></div>
-
-    <div class="content">
-      <h1>GSAP Particles</h1>
-      <p>Smooth GSAP-powered particles with natural movement and easing.</p>
+<section class="about" id="about">
+  <div class="about-inner">
+    <!-- LEFT: Profile image -->
+    <div class="about-photo" role="img" aria-label="Profile photo">
+      <img src="https://via.placeholder.com/400x500" alt="Profile photo" />
     </div>
 
-    <script>
-      function createParticle() {
-        const particle = document.createElement("div");
-        particle.className =
-          Math.random() > 0.7 ? "particle large" : "particle";
+    <!-- RIGHT: Text -->
+    <div class="about-text">
+      <h2 class="about-kanji">自己紹介</h2>
+      <h3 class="about-heading">About Me</h3>
+      <p>
+        I’m Dan Gabrielle De Castro, a designer and developer inspired by
+        Japanese minimalism. I create calm, balanced, and intentional digital
+        experiences with attention to detail and harmony.
+      </p>
+      <p>
+        My focus lies in front-end development, UI/UX design, and creating
+        portfolios that breathe with Wa-inspired aesthetics.
+      </p>
+      <a href="#projects" class="about-btn">View My Work</a>
+    </div>
+  </div>
+</section>
 
-        // Random horizontal position
-        const startX = Math.random() * window.innerWidth;
-        particle.style.left = startX + "px";
-        particle.style.top = window.innerHeight + "px";
+<style>
+  :root {
+    --accent: #b31111;
+    --ink: #2b2b2b;
+    --paper: #fbf7f2;
+  }
 
-        document.getElementById("particles").appendChild(particle);
+  /* Section wrapper */
+  .about {
+    position: relative;
+    padding: 80px 20px;
+    background: var(--paper);
+    overflow: hidden;
+  }
 
-        // GSAP animation with more natural movement
-        const tl = gsap.timeline();
+  /* subtle seigaiha wave pattern */
+  .about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle at 10px 10px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 0
+    );
+    background-size: 40px 40px;
+    opacity: 0.06;
+    pointer-events: none;
+  }
 
-        tl.fromTo(
-          particle,
-          {
-            y: 0,
-            x: 0,
-            opacity: 0,
-            scale: 0.5,
-          },
-          {
-            y: -(window.innerHeight + 100),
-            x: gsap.utils.random(-50, 50), // Random horizontal drift
-            opacity: 1,
-            scale: 1,
-            duration: gsap.utils.random(12, 18),
-            ease: "none",
-          }
-        ).to(
-          particle,
-          {
-            opacity: 0,
-            scale: 0.5,
-            duration: 2,
-            ease: "power2.out",
-          },
-          "-=2"
-        );
+  /* Grid layout like a shoji panel */
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
 
-        // Add subtle floating motion
-        gsap.to(particle, {
-          x: "+=" + gsap.utils.random(-20, 20),
-          duration: gsap.utils.random(3, 6),
-          repeat: -1,
-          yoyo: true,
-          ease: "power1.inOut",
-        });
+  /* Profile photo styling */
+  .about-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+  }
 
-        // Remove particle after animation
-        tl.call(() => {
-          if (particle.parentNode) {
-            particle.parentNode.removeChild(particle);
-          }
-        });
-      }
+  /* Text card */
+  .about-text {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  }
 
-      // Create particles at intervals
-      gsap.delayedCall(0, function createParticleLoop() {
-        createParticle();
-        gsap.delayedCall(gsap.utils.random(0.5, 1.2), createParticleLoop);
-      });
-    </script>
-  </body>
-</html>
+  /* Kanji subtitle */
+  .about-kanji {
+    font-size: 20px;
+    color: var(--accent);
+    margin: 0;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+  }
+
+  /* Heading with brush underline */
+  .about-heading {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 8px 0 20px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .about-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 6px;
+    background: url("https://svgshare.com/i/14oJ.svg") no-repeat center/cover;
+    opacity: 0.8;
+  }
+
+  /* Paragraphs */
+  .about-text p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  /* Button styled like washi paper with a red seal hover */
+  .about-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .about-btn:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .about-inner {
+      grid-template-columns: 1fr;
+    }
+    .about-photo {
+      order: -1;
+    }
+  }
+</style>

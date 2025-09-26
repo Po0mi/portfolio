@@ -44,6 +44,16 @@ function initTextParallax() {
       scrub: 1,
     },
   });
+  gsap.to(".project-bacground ", {
+    yPercent: -15,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
 
   gsap.to(".projects-title", {
     yPercent: -12,

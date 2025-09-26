@@ -72,13 +72,35 @@ function initSectionScrollAnimations() {
 
   function initAboutSectionAnimation() {
     const aboutTitle = document.querySelector(".about-me");
+    const projectBacground = document.querySelector(".project-bacground");
     const skillsIntro = document.querySelector(".skills-intro");
     const textContent = document.querySelector(".text-content");
     const skillCards = document.querySelectorAll(".skill-card");
+    const projectCards = document.querySelectorAll(".project-card ");
     const statsItems = document.querySelectorAll(".stat-item");
 
     gsap.fromTo(
       aboutTitle,
+      {
+        scale: 0.8,
+        opacity: 0,
+        y: 100,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: aboutTitle,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+    gsap.fromTo(
+      projectBacground,
       {
         scale: 0.8,
         opacity: 0,
@@ -138,6 +160,31 @@ function initSectionScrollAnimations() {
 
     gsap.fromTo(
       skillCards,
+      {
+        y: 60,
+        opacity: 0,
+        scale: 0.8,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: "back.out(1.2)",
+        stagger: {
+          amount: 1.5,
+          grid: [3, 3],
+          from: "start",
+        },
+        scrollTrigger: {
+          trigger: ".skills-grid",
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+    gsap.fromTo(
+      projectCards,
       {
         y: 60,
         opacity: 0,

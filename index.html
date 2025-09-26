@@ -20,32 +20,34 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-
+    <!-- Loader Overlay -->
     <div class="loader-overlay" id="loader">
-        <div class="kanji-loader">
-            <div class="kanji-container">
-   
-                <div class="kanji-stroke stroke-1"></div>
-                <div class="kanji-stroke stroke-2"></div>
-                <div class="kanji-stroke stroke-3"></div>
-                <div class="kanji-stroke stroke-4"></div>
-                <div class="kanji-stroke stroke-5"></div>
-                
-        
-                <div class="kanji-character">道</div>
-            </div>
-            
-            <div class="loading-text">
-                Loading...
-                <div class="japanese-text">道 - dō (the way)</div>
-            </div>
+      <div class="kanji-loader">
+        <div class="kanji-container">
+          <div class="kanji-stroke stroke-1"></div>
+          <div class="kanji-stroke stroke-2"></div>
+          <div class="kanji-stroke stroke-3"></div>
+          <div class="kanji-stroke stroke-4"></div>
+          <div class="kanji-stroke stroke-5"></div>
+          <div class="kanji-character">道</div>
         </div>
+
+        <div class="loading-text">
+          Loading...
+          <div class="japanese-text">道 - dō (the way)</div>
+        </div>
+      </div>
     </div>
-      <div class="particles-container" id="particles"></div>
+
+    <!-- Particles Container -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Hero Wrapper -->
     <div class="hero-wrapper">
+      <!-- Navigation -->
       <nav class="navbar">
         <ul class="navbar-nav">
           <li><a href="#about-skills">About</a></li>
@@ -55,22 +57,34 @@
         </ul>
       </nav>
 
+      <!-- Main Content -->
       <main>
         <section class="hero">
           <div class="container">
-            
-            <div class="scrolldown">
-            </div>
+            <div class="scrolldown"></div>
+
             <div class="indicator">
               <hr />
               <h2>ヒーロー</h2>
             </div>
-            <div class="sub-text"><h3>UI/UX Desinger</h3></div>
-              <div class="sub-text3"><h3>
-情熱と精度をもってデジタル体験を創造する</h3></div>
-             <div class="sub-text2"><h3>Crafting digital experiences with passion and precision</h3></div>
-            <div class="title"><h1>WEBSITE</h1></div>
-            <div class="title2"><h2>PORTFOLIO</h2></div>
+
+            <div class="sub-text">
+              <h3>UI/UX Desinger</h3>
+            </div>
+
+            <div class="sub-text3">
+              <h3>情熱と精度をもってデジタル体験を創造する</h3>
+            </div>
+
+            <div class="sub-text2">
+              <h3>Crafting digital experiences with passion and precision</h3>
+            </div>
+
+            <div class="title"></div>
+
+            <div class="title2">
+              <h2>PORTFOLIO</h2>
+            </div>
 
             <div class="soc-med">
               <div class="socials">
@@ -105,15 +119,18 @@
       </main>
     </div>
 
+    <!-- About/Skills Section -->
     <div class="about-wrapper">
-      <section id="about-skills"  class="about">
+      <section id="about-skills" class="about">
         <div class="container-about">
           <div class="indicator-skills">
             <h2>ヒーロー</h2>
             <hr />
             <h2>スキル</h2>
           </div>
-          <div class="about-me"><h1>ABOUT</h1></div>
+
+          <div class="about-me"></div>
+
           <div class="skills-intro">
             <h3>My Technical Arsenal</h3>
             <p>
@@ -121,8 +138,9 @@
               ideas to life through code and design.
             </p>
           </div>
+
           <div class="text-content">
-            <h2>Who Am I?</h2>
+            <h2>About me</h2>
             <p>Hello, my name is <b>Dan Gabrielle De Castro.</b></p>
             <p>
               I am a 4th-year graduating student at Central Philippine
@@ -146,283 +164,398 @@
                 Tzu</i
               >
             </p>
-            <div class="button">
-              <a
-                href="#"
-                
-                ><span>DOWNLOAD CV</span></a
-              >
+
+            <div class="button" id="button">
+              <a href="#"><span>DOWNLOAD CV</span></a>
             </div>
-                 <div class="stats-grid">
-                  <div class="stat-item">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Years Study</div>
-                    </div>
-                      <div class="stat-item">
-                        <div class="stat-number">12+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                        <div class="stat-item">
-                        <div class="stat-number">9</div>
-                        <div class="stat-label">Technologies</div>
-                    </div>
-                 </div>
-                 
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Years Study</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">12+</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">9</div>
+                <div class="stat-label">Technologies</div>
+              </div>
+            </div>
           </div>
-
-                <div class="skills-grid" id="skillsGrid">
-                    <div class="skill-card" data-category="frontend">
-                        <i class="fab fa-html5 skill-icon html"></i>
-                        <div class="skill-name">HTML</div>
-                        <div class="skill-level">Advanced</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-category="frontend">
-                        <i class="fab fa-css3-alt skill-icon css"></i>
-                        <div class="skill-name">CSS</div>
-                        <div class="skill-level">Advanced</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 85%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-category="frontend">
-                        <i class="fab fa-js skill-icon js"></i>
-                        <div class="skill-name">JavaScript</div>
-                        <div class="skill-level">Intermediate</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 75%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-category="frontend">
-                        <i class="fab fa-react skill-icon react"></i>
-                        <div class="skill-name">React</div>
-                        <div class="skill-level">Intermediate</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 70%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-category="backend">
-                        <i class="fab fa-python skill-icon python"></i>
-                        <div class="skill-name">Python</div>
-                        <div class="skill-level">Intermediate</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 80%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-category="backend">
-                        <i class="fab fa-php skill-icon php"></i>
-                        <div class="skill-name">PHP</div>
-                        <div class="skill-level">Intermediate</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 75%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-category="frontend">
-                        <i class="fab fa-flutter skill-icon flutter"></i>
-                        <div class="skill-name">Flutter</div>
-                        <div class="skill-level">Beginner</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 60%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-category="tools">
-                        <i class="fab fa-figma skill-icon figma"></i>
-                        <div class="skill-name">Figma</div>
-                        <div class="skill-level">Intermediate</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 80%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-card" data-category="tools">
-                        <i class="fab fa-github skill-icon github"></i>
-                        <div class="skill-name">GitHub</div>
-                        <div class="skill-level">Intermediate</div>
-                        <div class="proficiency-bar">
-                            <div class="proficiency-fill" style="width: 85%;"></div>
-                        </div>
-                    </div>
+          <div class="shibui-grid">
+            <div class="shibui-card">
+              <div class="skill-header">
+                <i class="fab fa-html5 skill-icon html"></i>
+                <div class="skill-info">
+                  <div class="skill-name">HTML</div>
+                  <div class="skill-level">Advanced</div>
                 </div>
+              </div>
+              <div class="skill-description">
+                Semantic markup and modern web standards. Building accessible,
+                well-structured foundations.
+              </div>
+              <div class="proficiency-indicator">
+                <div class="proficiency-dots">
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="proficiency-text">Proficient</div>
+              </div>
+              <div class="japanese-accent">構造</div>
             </div>
+
+            <div class="shibui-card">
+              <div class="skill-header">
+                <i class="fab fa-css3-alt skill-icon css"></i>
+                <div class="skill-info">
+                  <div class="skill-name">CSS</div>
+                  <div class="skill-level">Advanced</div>
+                </div>
+              </div>
+              <div class="skill-description">
+                Visual design through code. Grid systems, animations, and
+                responsive layouts.
+              </div>
+              <div class="proficiency-indicator">
+                <div class="proficiency-dots">
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="proficiency-text">Proficient</div>
+              </div>
+              <div class="japanese-accent">様式</div>
+            </div>
+
+            <div class="shibui-card">
+              <div class="skill-header">
+                <i class="fab fa-js skill-icon js"></i>
+                <div class="skill-info">
+                  <div class="skill-name">JavaScript</div>
+                  <div class="skill-level">Intermediate</div>
+                </div>
+              </div>
+              <div class="skill-description">
+                Interactive web experiences. Modern ES6+ features and DOM
+                manipulation.
+              </div>
+              <div class="proficiency-indicator">
+                <div class="proficiency-dots">
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="proficiency-text">Developing</div>
+              </div>
+              <div class="japanese-accent">動作</div>
+            </div>
+
+            <div class="shibui-card">
+              <div class="skill-header">
+                <i class="fab fa-react skill-icon react"></i>
+                <div class="skill-info">
+                  <div class="skill-name">React</div>
+                  <div class="skill-level">Intermediate</div>
+                </div>
+              </div>
+              <div class="skill-description">
+                Component-based architecture. State management and modern
+                development patterns.
+              </div>
+              <div class="proficiency-indicator">
+                <div class="proficiency-dots">
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="proficiency-text">Developing</div>
+              </div>
+              <div class="japanese-accent">反応</div>
+            </div>
+
+            <div class="shibui-card">
+              <div class="skill-header">
+                <i class="fab fa-python skill-icon python"></i>
+                <div class="skill-info">
+                  <div class="skill-name">Python</div>
+                  <div class="skill-level">Intermediate</div>
+                </div>
+              </div>
+              <div class="skill-description">
+                Backend development and automation. Clean, readable code for
+                various applications.
+              </div>
+              <div class="proficiency-indicator">
+                <div class="proficiency-dots">
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="proficiency-text">Proficient</div>
+              </div>
+              <div class="japanese-accent">蛇</div>
+            </div>
+
+            <div class="shibui-card">
+              <div class="skill-header">
+                <i class="fab fa-figma skill-icon figma"></i>
+                <div class="skill-info">
+                  <div class="skill-name">Figma</div>
+                  <div class="skill-level">Intermediate</div>
+                </div>
+              </div>
+              <div class="skill-description">
+                Design systems and prototyping. Collaborative interface design
+                and user experience.
+              </div>
+              <div class="proficiency-indicator">
+                <div class="proficiency-dots">
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot filled"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="proficiency-text">Proficient</div>
+              </div>
+              <div class="japanese-accent">設計</div>
+            </div>
+          </div>
         </div>
       </section>
- <div class="projects-wrapper">
-        <section id="projects" class="projects">
-            <div class="container-projects">
-                <div class="indicator-project">
-                    <hr />
-                    <h2>プロジェクト</h2>
-                </div>
-                                 <div class="project-intro">
-            <h3>My collection of projects</h3>
-            <p>
-              Here are some of my recent projects and work.
-            </p>
-                          </div>
-                <div class="projects-title">
-                    <h1>PROJECTS</h1>
-                </div>
-
-                <div class="projects-grid">
-           
-                    <div class="project-card main">
-                        <div class="project-image" style="background-image: url('images/project.png');"></div>
-                        <div class="project-basic">
-                            <h3 class="project-title">Web Base Management System</h3>
-                            <p class="project-type">Full-Stack Application</p>
-                        </div>
-                        <div class="project-details">
-                            <p class="project-description">
-                                Modern Web Base management system with secure payments, inventory management, and admin dashboard.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://philippineredcross-iloilochapter.org" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Live
-                                </a>
-                                <a href="https://github.com/Po0mi/prc_management" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/project2.png');"></div>
-                        <div class="project-basic">
-                            <h3 class="project-title">Portfolio Project</h3>
-                            <p class="project-type">Website</p>
-                        </div>
-                        <div class="project-details">
-                            <p class="project-description">
-                                Project Portfolio for a friend featuring modern design and interactive elements.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                  <a href="https://po0mi.github.io/project" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Live
-                                </a>
-                                <a href="https://github.com/Po0mi/project" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    Source
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/project3.png');"></div>
-                        <div class="project-basic">
-                            <h3 class="project-title">Black Jack Game</h3>
-                            <p class="project-type">Game</p>
-                        </div>
-                        <div class="project-details">
-                            <p class="project-description">
-                                A simple Black jack game with intuitive UI using Python and modern design principles.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Po0mi/Simple-python-blackjack" class="project-link">
-                                    <i class="fas fa-download"></i>
-                                    Download
-                                </a>
-                                <a href="https://github.com/Po0mi/Simple-python-blackjack" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    Source
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/project4.png');"></div>
-                        <div class="project-basic">
-                            <h3 class="project-title">School Project Portfolio</h3>
-                            <p class="project-type">Website</p>
-                        </div>
-                        <div class="project-details">
-                            <p class="project-description">
-                                Academic portfolio project showcasing web development skills and design capabilities.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                 <a href="https://po0mi.github.io/De-Castro_Finals" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    Live
-                                </a>
-                                <a href="https://github.com/Po0mi/De-Castro_Finals" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    Source
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                               <div class="project-card">
-                        <div class="project-image" style="background-image: url('images/project5.jpg');"></div>
-                        <div class="project-basic">
-                            <h3 class="project-title">Python Calculator</h3>
-                            <p class="project-type">Desktop App</p>
-                        </div>
-                        <div class="project-details">
-                            <p class="project-description">
-                               A fully functional calculator application built with Python featuring basic arithmetic operations, advanced mathematical functions, and an intuitive GUI interface using Tkinter.
-                            </p>
-                            <div class="project-tech">
-                                              <span class="tech-tag">Python</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Po0mi/calculator" class="project-link">
-                                    <i class="fas fa-download"></i>
-                                    Download
-                                </a>
-                                <a href="https://github.com/Po0mi/calculator" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    Source
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-     <script src="js/loader.js"></script>
-      <script src="js/particles.js"></script>
-            <script src="js/scroll.js"></script>
-                <script src="js/smooth-scroll.js"></script>
-                <script src="js/parallax.js"></script>
-              
-                   
 
+    <!-- Projects Section -->
+    <div class="projects-wrapper">
+      <section id="projects" class="projects">
+        <div class="container-projects">
+          <div class="indicator-project">
+            <hr />
+            <h2>プロジェクト</h2>
+          </div>
+
+          <div class="project-bacground"></div>
+
+          <div class="project-intro">
+            <h3>My collection of projects</h3>
+            <p>Here are some of my recent projects and work.</p>
+          </div>
+
+          <div class="projects-grid">
+            <div class="project-card main">
+              <div
+                class="project-image"
+                style="background-image: url('images/project.png')"
+              ></div>
+              <div class="project-basic">
+                <h3 class="project-title">Web Base Management System</h3>
+                <p class="project-type">Full-Stack Application</p>
+              </div>
+              <div class="project-details">
+                <p class="project-description">
+                  Modern Web Base management system with secure payments,
+                  inventory management, and admin dashboard.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://philippineredcross-iloilochapter.org"
+                    class="project-link"
+                  >
+                    <i class="fas fa-external-link-alt"></i>
+                    Live
+                  </a>
+                  <a
+                    href="https://github.com/Po0mi/prc_management"
+                    class="project-link"
+                  >
+                    <i class="fab fa-github"></i>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div
+                class="project-image"
+                style="background-image: url('images/project2.png')"
+              ></div>
+              <div class="project-basic">
+                <h3 class="project-title">Portfolio Project</h3>
+                <p class="project-type">Website</p>
+              </div>
+              <div class="project-details">
+                <p class="project-description">
+                  Project Portfolio for a friend featuring modern design and
+                  interactive elements.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://po0mi.github.io/project"
+                    class="project-link"
+                  >
+                    <i class="fas fa-external-link-alt"></i>
+                    Live
+                  </a>
+                  <a
+                    href="https://github.com/Po0mi/project"
+                    class="project-link"
+                  >
+                    <i class="fab fa-github"></i>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div
+                class="project-image"
+                style="background-image: url('images/project3.png')"
+              ></div>
+              <div class="project-basic">
+                <h3 class="project-title">Black Jack Game</h3>
+                <p class="project-type">Game</p>
+              </div>
+              <div class="project-details">
+                <p class="project-description">
+                  A simple Black jack game with intuitive UI using Python and
+                  modern design principles.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/Po0mi/Simple-python-blackjack"
+                    class="project-link"
+                  >
+                    <i class="fas fa-download"></i>
+                    Download
+                  </a>
+                  <a
+                    href="https://github.com/Po0mi/Simple-python-blackjack"
+                    class="project-link"
+                  >
+                    <i class="fab fa-github"></i>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div
+                class="project-image"
+                style="background-image: url('images/project4.png')"
+              ></div>
+              <div class="project-basic">
+                <h3 class="project-title">School Project Portfolio</h3>
+                <p class="project-type">Website</p>
+              </div>
+              <div class="project-details">
+                <p class="project-description">
+                  Academic portfolio project showcasing web development skills
+                  and design capabilities.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://po0mi.github.io/De-Castro_Finals"
+                    class="project-link"
+                  >
+                    <i class="fas fa-external-link-alt"></i>
+                    Live
+                  </a>
+                  <a
+                    href="https://github.com/Po0mi/De-Castro_Finals"
+                    class="project-link"
+                  >
+                    <i class="fab fa-github"></i>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div
+                class="project-image"
+                style="background-image: url('images/project5.jpg')"
+              ></div>
+              <div class="project-basic">
+                <h3 class="project-title">Python Calculator</h3>
+                <p class="project-type">Desktop App</p>
+              </div>
+              <div class="project-details">
+                <p class="project-description">
+                  A fully functional calculator application built with Python
+                  featuring basic arithmetic operations, advanced mathematical
+                  functions, and an intuitive GUI interface using Tkinter.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/Po0mi/calculator"
+                    class="project-link"
+                  >
+                    <i class="fas fa-download"></i>
+                    Download
+                  </a>
+                  <a
+                    href="https://github.com/Po0mi/calculator"
+                    class="project-link"
+                  >
+                    <i class="fab fa-github"></i>
+                    Source
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/parallax.js"></script>
+    <script></script>
   </body>
 </html>
