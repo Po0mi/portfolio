@@ -72,13 +72,9 @@ function initSectionScrollAnimations() {
 
   function initAboutSectionAnimation() {
     const aboutTitle = document.querySelector(".about-me");
-    const projectBacground = document.querySelector(".project-bacground");
-    const skillsIntro = document.querySelector(".skills-intro");
     const textContent = document.querySelector(".text-content");
-    const skillCards = document.querySelectorAll(".skill-card");
-    const projectCards = document.querySelectorAll(".project-card ");
-    const statsItems = document.querySelectorAll(".stat-item");
 
+    // About section animations
     gsap.fromTo(
       aboutTitle,
       {
@@ -95,45 +91,6 @@ function initSectionScrollAnimations() {
         scrollTrigger: {
           trigger: aboutTitle,
           start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-    gsap.fromTo(
-      projectBacground,
-      {
-        scale: 0.8,
-        opacity: 0,
-        y: 100,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: aboutTitle,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    gsap.fromTo(
-      skillsIntro,
-      {
-        x: 50,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: skillsIntro,
-          start: "top 85%",
           toggleActions: "play none none reverse",
         },
       }
@@ -157,7 +114,60 @@ function initSectionScrollAnimations() {
         },
       }
     );
+  }
 
+  function initSkillsSectionAnimation() {
+    const skillsBackground = document.querySelector(".skills-background");
+    const skillsIntro = document.querySelector(".skills-intro");
+    const skillCards = document.querySelectorAll(".shibui-card");
+
+    // Skills background animation
+    if (skillsBackground) {
+      gsap.fromTo(
+        skillsBackground,
+        {
+          scale: 0.8,
+          opacity: 0,
+          y: 100,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".skills",
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+
+    // Skills intro animation
+    if (skillsIntro) {
+      gsap.fromTo(
+        skillsIntro,
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: skillsIntro,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+
+    // Skill cards animation
     gsap.fromTo(
       skillCards,
       {
@@ -172,133 +182,68 @@ function initSectionScrollAnimations() {
         duration: 0.6,
         ease: "back.out(1.2)",
         stagger: {
-          amount: 1.5,
-          grid: [3, 3],
+          amount: 1.2,
+          grid: [2, 3],
           from: "start",
         },
         scrollTrigger: {
-          trigger: ".skills-grid",
+          trigger: ".shibui-grid",
           start: "top 85%",
           toggleActions: "play none none reverse",
         },
       }
     );
-    gsap.fromTo(
-      projectCards,
-      {
-        y: 60,
-        opacity: 0,
-        scale: 0.8,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.6,
-        ease: "back.out(1.2)",
-        stagger: {
-          amount: 1.5,
-          grid: [3, 3],
-          from: "start",
-        },
-        scrollTrigger: {
-          trigger: ".skills-grid",
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    statsItems.forEach((item, index) => {
-      const number = item.querySelector(".stat-number");
-      const originalText = number.textContent;
-      const targetNumber = parseInt(originalText.replace(/\D/g, "")) || 0;
-
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.fromTo(
-            { value: 0 },
-            {
-              value: targetNumber,
-              duration: 1.5,
-              ease: "power2.out",
-              delay: index * 0.2,
-              onUpdate: function () {
-                const currentValue = Math.round(this.targets()[0].value);
-                number.textContent = originalText.includes("+")
-                  ? `${currentValue}+`
-                  : currentValue;
-              },
-            }
-          );
-
-          gsap.fromTo(
-            item,
-            {
-              scale: 0.8,
-              y: 30,
-              opacity: 0,
-            },
-            {
-              scale: 1,
-              y: 0,
-              opacity: 1,
-              duration: 0.8,
-              ease: "back.out(1.5)",
-              delay: index * 0.2,
-            }
-          );
-        },
-      });
-    });
   }
 
   function initProjectsSectionAnimation() {
-    const projectsTitle = document.querySelector(".projects-title");
+    const projectBackground = document.querySelector(".project-bacground");
     const projectIntro = document.querySelector(".project-intro");
     const projectCards = document.querySelectorAll(".project-card");
 
-    gsap.fromTo(
-      projectsTitle,
-      {
-        scale: 0.7,
-        opacity: 0,
-        rotationX: -90,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        rotationX: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: projectsTitle,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
+    // Project background animation
+    if (projectBackground) {
+      gsap.fromTo(
+        projectBackground,
+        {
+          scale: 0.8,
+          opacity: 0,
+          y: 100,
         },
-      }
-    );
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: projectBackground,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
 
-    gsap.fromTo(
-      projectIntro,
-      {
-        y: 30,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: projectIntro,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
+    if (projectIntro) {
+      gsap.fromTo(
+        projectIntro,
+        {
+          y: 30,
+          opacity: 0,
         },
-      }
-    );
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: projectIntro,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
 
     projectCards.forEach((card, index) => {
       const isMainCard = card.classList.contains("main");
@@ -341,7 +286,7 @@ function initSectionScrollAnimations() {
   }
 
   function initSectionTransitions() {
-    const sections = [".hero", ".about", ".projects"];
+    const sections = [".hero", ".about", ".skills", ".projects"];
 
     sections.forEach((selector, index) => {
       const nextSection = sections[index + 1];
@@ -356,10 +301,12 @@ function initSectionScrollAnimations() {
           const progress = self.progress;
           const currentSection = document.querySelector(selector);
 
-          gsap.set(currentSection, {
-            opacity: 1 - progress * 0.3,
-            scale: 1 - progress * 0.05,
-          });
+          if (currentSection) {
+            gsap.set(currentSection, {
+              opacity: 1 - progress * 0.3,
+              scale: 1 - progress * 0.05,
+            });
+          }
         },
       });
     });
@@ -371,8 +318,6 @@ function initSectionScrollAnimations() {
     );
 
     wrappers.forEach((wrapper) => {
-      const background = wrapper.querySelector("::before") || wrapper;
-
       ScrollTrigger.create({
         trigger: wrapper,
         start: "top bottom",
@@ -388,9 +333,11 @@ function initSectionScrollAnimations() {
     });
   }
 
+  // Initialize all animations
   initSmoothScrolling();
   initHeroExitAnimation();
   initAboutSectionAnimation();
+  initSkillsSectionAnimation(); // New separate function for skills
   initProjectsSectionAnimation();
   initSectionTransitions();
   initParallaxBackgrounds();

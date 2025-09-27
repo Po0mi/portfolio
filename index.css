@@ -184,10 +184,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.2) saturate(1.5);
+  filter: brightness(0.1) saturate(1.5);
   z-index: 0;
 }
-
 .projects-wrapper {
   background-size: cover;
   background-position: center;
@@ -258,8 +257,7 @@ body {
   transition: all 0.3s ease;
 }
 .projects,
-.hero,
-.about {
+.hero {
   height: 100vh;
   width: 100vw;
   overflow-y: hidden;
@@ -272,11 +270,45 @@ body {
   position: relative;
 }
 
-.container-about,
+.about {
+  height: 80vh;
+  width: 100vw;
+  overflow-y: hidden;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.skills {
+  height: 70vh;
+  width: 100vw;
+  overflow-y: hidden;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
 .container-projects,
-.container-skills,
 .container {
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.container-skills {
+  height: 70vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.container-about {
+  height: 80vh;
   width: 100vw;
   overflow: hidden;
 }
@@ -291,6 +323,7 @@ body {
   align-items: center;
   position: relative;
 }
+.container-skills,
 .container-about {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -453,7 +486,7 @@ body {
 }
 .indicator-project,
 .indicator-skills {
-  grid-area: 7/7/-2/-2;
+  grid-area: 6/7/-2/-2;
   font-size: clamp(0.1rem, 1vw, 1rem);
   color: rgb(189, 178, 178);
   justify-self: end;
@@ -514,7 +547,7 @@ body {
   margin-top: 1rem;
 }
 .about-me {
-  grid-area: 3/ 1 /8/ 8;
+  grid-area: 3/ 1 /8/ 4;
   width: clamp(300px, 40vw, 1000px);
   height: clamp(300px, 40vw, 1000px);
   background-image: url("about-background.webp");
@@ -525,8 +558,24 @@ body {
   justify-self: center;
   align-self: center;
   filter: brightness(0.1) saturate(1.2);
-  filter: brightness(0.2) saturate(1.2)
-    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  filter: brightness(0.1) saturate(1.2)
+    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+  opacity: 0.9;
+}
+.skills-background {
+  grid-area: 3/ 5 /8/ 8;
+  width: clamp(300px, 40vw, 1000px);
+  height: clamp(300px, 40vw, 1000px);
+  background-image: url("skill-kanji.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  justify-self: center;
+  align-self: center;
+  filter: brightness(0.1) saturate(1.2);
+  filter: brightness(0.1) saturate(1.2)
+    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
   opacity: 0.9;
 }
 .project-bacground {
@@ -547,7 +596,7 @@ body {
 }
 
 .text-content {
-  grid-area: 4/ 2 /6/ 5;
+  grid-area: 3/ 4 /4/ 7;
   align-self: start;
   justify-self: start;
   padding: 2rem 2rem;
@@ -612,8 +661,9 @@ body {
 }
 .text-content p {
   font-size: clamp(0.8rem, 2vw, 2rem);
-  font-weight: 300;
-
+  font-family: "Crimson Text", serif;
+  line-height: 2.1;
+  margin-bottom: 2rem;
   margin: 2rem 1rem;
   color: rgb(189, 178, 178);
 }
@@ -621,13 +671,19 @@ body {
   font-weight: bold;
 }
 .text-content i {
+  margin: 0rem;
+  padding: 1rem;
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  border-left: 3px solid #b31111;
+  background: rgba(179, 17, 17, 0.05);
+}
+.text-content i span {
   color: #b31111;
-  font-family: "Sekaiwo";
 }
 
 .skills-intro {
   color: rgb(189, 178, 178);
-  grid-area: 3/5/4/7;
+  grid-area: 1/2/2/7;
   text-align: center;
   font-size: clamp(0.5rem, 2vw, 1.5rem);
   z-index: 3;
@@ -668,10 +724,10 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  grid-area: 4/5/7/7;
+  grid-area: 3/2/7/7;
   z-index: 1;
-  width: 30vw;
-  height: 40vh;
+  width: 50vw;
+  height: 45vh;
 }
 
 .shibui-card {
@@ -744,7 +800,7 @@ body {
 }
 
 .skill-name {
-  font-size: clamp(0.5rem, 2vw, 1.5rem);
+  font-size: clamp(0.5rem, 2vw, 2rem);
   color: #d4d0c8;
   font-weight: 400;
   margin-bottom: 0.3rem;
@@ -752,14 +808,14 @@ body {
 }
 
 .skill-level {
-  font-size: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(0.5rem, 2vw, 1.3rem);
   color: rgba(160, 160, 160, 0.8);
   font-weight: 300;
   letter-spacing: 0.3px;
 }
 
 .skill-description {
-  font-size: clamp(0.5rem, 2vw, 1.1rem);
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
   color: rgba(160, 160, 160, 0.9);
   line-height: 1.6;
   font-weight: 300;
@@ -780,8 +836,8 @@ body {
 }
 
 .dot {
-  width: 4px;
-  height: 4px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: rgba(160, 160, 160, 0.3);
   transition: all 0.8s ease;
@@ -796,7 +852,7 @@ body {
 }
 
 .proficiency-text {
-  font-size: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(0.5rem, 2vw, 1.3rem);
   color: rgba(160, 160, 160, 0.6);
   font-weight: 300;
   letter-spacing: 0.2px;
