@@ -8,6 +8,8 @@ function startKanjiLoader() {
     onComplete: () => {
       setTimeout(() => {
         loader.classList.add("hidden");
+        // Initialize the Evolution Chain after loader completes
+        initializeEvolutionChain();
       }, 0);
     },
   });
@@ -47,6 +49,34 @@ function startKanjiLoader() {
       },
       3.5
     );
+}
+
+function initializeEvolutionChain() {
+  // Add a slight delay for smooth transition
+  setTimeout(() => {
+    // Animate the scroll indicator in
+    const indicator = document.getElementById("evolutionIndicator");
+    if (indicator) {
+      gsap.fromTo(
+        indicator,
+        {
+          opacity: 0,
+          x: -50,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        }
+      );
+    }
+
+    // Initialize the Evolution Chain class
+    if (typeof EvolutionChainIndicator !== "undefined") {
+      window.evolutionIndicator = new EvolutionChainIndicator();
+    }
+  }, 200);
 }
 
 function showLoader() {

@@ -198,7 +198,8 @@ function initSectionScrollAnimations() {
   function initProjectsSectionAnimation() {
     const projectBackground = document.querySelector(".project-bacground");
     const projectIntro = document.querySelector(".project-intro");
-    const projectCards = document.querySelectorAll(".project-card");
+    const featuredProject = document.querySelector(".featured-project");
+    const otherProjects = document.querySelectorAll(".other-project");
 
     // Project background animation
     if (projectBackground) {
@@ -224,6 +225,7 @@ function initSectionScrollAnimations() {
       );
     }
 
+    // Project intro animation
     if (projectIntro) {
       gsap.fromTo(
         projectIntro,
@@ -245,41 +247,90 @@ function initSectionScrollAnimations() {
       );
     }
 
-    projectCards.forEach((card, index) => {
-      const isMainCard = card.classList.contains("main");
-
+    // Featured project animation
+    if (featuredProject) {
       gsap.fromTo(
-        card,
+        featuredProject,
         {
-          y: isMainCard ? 100 : 60,
-          x: index % 2 === 0 ? -50 : 50,
+          y: 80,
           opacity: 0,
-          scale: 0.9,
-          rotationY: index % 2 === 0 ? -15 : 15,
+          scale: 0.95,
         },
         {
           y: 0,
-          x: 0,
           opacity: 1,
           scale: 1,
-          rotationY: 0,
-          duration: isMainCard ? 1.2 : 0.8,
+          duration: 1.2,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: card,
+            trigger: featuredProject,
             start: "top 85%",
             toggleActions: "play none none reverse",
           },
-          delay: index * 0.15,
         }
       );
 
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, {
-          rotationX: 0,
-          rotationY: 0,
-          duration: 0.5,
-          ease: "power1.out",
+      // Add subtle parallax effect to featured image
+      const featuredImage = featuredProject.querySelector(".featured-image");
+      if (featuredImage) {
+        ScrollTrigger.create({
+          trigger: featuredProject,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            gsap.set(featuredImage, {
+              y: progress * -30,
+            });
+          },
+        });
+      }
+    }
+
+    // Other projects animation
+    gsap.fromTo(
+      otherProjects,
+      {
+        y: 60,
+        opacity: 0,
+        scale: 0.9,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "back.out(1.1)",
+        stagger: {
+          amount: 0.6,
+          from: "start",
+        },
+        scrollTrigger: {
+          trigger: ".other-projects",
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Add hover animations for other projects
+    otherProjects.forEach((project) => {
+      project.addEventListener("mouseenter", () => {
+        gsap.to(project, {
+          y: -8,
+          scale: 1.02,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+
+      project.addEventListener("mouseleave", () => {
+        gsap.to(project, {
+          y: 0,
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out",
         });
       });
     });
@@ -337,7 +388,7 @@ function initSectionScrollAnimations() {
   initSmoothScrolling();
   initHeroExitAnimation();
   initAboutSectionAnimation();
-  initSkillsSectionAnimation(); // New separate function for skills
+  initSkillsSectionAnimation();
   initProjectsSectionAnimation();
   initSectionTransitions();
   initParallaxBackgrounds();

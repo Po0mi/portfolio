@@ -42,8 +42,57 @@
       </div>
     </div>
 
-    <!-- Particles Container -->
-    <div class="particles-container" id="particles"></div>
+    <div class="evolution-scroll-indicator" id="evolutionIndicator">
+      <div class="evolution-track">
+        <!-- Progress Indicators -->
+        <div class="progress-indicators">
+          <div class="progress-dot"></div>
+          <div class="progress-dot"></div>
+          <div class="progress-dot"></div>
+          <div class="progress-dot"></div>
+          <div class="progress-dot"></div>
+        </div>
+
+        <!-- Kanji Nodes -->
+        <div class="kanji-node" data-section="0" data-meaning="Start/Beginning">
+          <div class="node-background"></div>
+          <div class="node-kanji">始</div>
+          <div class="meaning-tooltip">始 - Start</div>
+        </div>
+
+        <div class="kanji-node" data-section="1" data-meaning="Learn/Study">
+          <div class="node-background"></div>
+          <div class="node-kanji">学</div>
+          <div class="meaning-tooltip">学 - Learn</div>
+        </div>
+
+        <div
+          class="kanji-node"
+          data-section="2"
+          data-meaning="Practice/Training"
+        >
+          <div class="node-background"></div>
+          <div class="node-kanji">練</div>
+          <div class="meaning-tooltip">練 - Practice</div>
+        </div>
+
+        <div
+          class="kanji-node"
+          data-section="3"
+          data-meaning="Achievement/Mastery"
+        >
+          <div class="node-background"></div>
+          <div class="node-kanji">達</div>
+          <div class="meaning-tooltip">達 - Master</div>
+        </div>
+
+        <div class="kanji-node" data-section="4" data-meaning="Teach/Share">
+          <div class="node-background"></div>
+          <div class="node-kanji">教</div>
+          <div class="meaning-tooltip">教 - Teach</div>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Wrapper -->
     <div class="hero-wrapper">
@@ -61,11 +110,10 @@
       <main>
         <section class="hero">
           <div class="container">
-            <div class="scrolldown"></div>
-
-            <div class="indicator">
-              <hr />
-              <h2>ヒーロー</h2>
+            <div class="scrolldown">
+              <div class="left-pillar"></div>
+              <div class="right-pillar"></div>
+              <div class="scroll-dot"></div>
             </div>
 
             <div class="sub-text">
@@ -126,7 +174,7 @@
           <div class="about-me"></div>
 
           <div class="text-content">
-            <h2>About me</h2>
+            <h2>自己紹介 (Jikoshōkai - Self Introduction)</h2>
             <p>Hello, my name is <b>Dan Gabrielle De Castro.</b></p>
             <p>
               I am a 4th-year graduating student at Central Philippine
@@ -160,18 +208,10 @@
       </section>
       <section class="skills" id="skills">
         <div class="container-skills">
-          <div class="indicator-skills">
-            <h2>ヒーロー</h2>
-            <hr />
-            <h2>スキル</h2>
-          </div>
           <div class="skills-background"></div>
           <div class="skills-intro">
-            <h3>My Technical Arsenal</h3>
-            <p>
-              A curated collection of technologies and tools that I use to bring
-              ideas to life through code and design.
-            </p>
+            <h3>技能 (Ginō)</h3>
+            <p>Technologies and tools that shape my creative process.</p>
           </div>
           <div class="shibui-grid">
             <div class="shibui-card">
@@ -186,16 +226,7 @@
                 Semantic markup and modern web standards. Building accessible,
                 well-structured foundations.
               </div>
-              <div class="proficiency-indicator">
-                <div class="proficiency-dots">
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot"></div>
-                </div>
-                <div class="proficiency-text">Proficient</div>
-              </div>
+
               <div class="japanese-accent">構造</div>
             </div>
 
@@ -211,16 +242,7 @@
                 Visual design through code. Grid systems, animations, and
                 responsive layouts.
               </div>
-              <div class="proficiency-indicator">
-                <div class="proficiency-dots">
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot"></div>
-                </div>
-                <div class="proficiency-text">Proficient</div>
-              </div>
+
               <div class="japanese-accent">様式</div>
             </div>
 
@@ -236,16 +258,7 @@
                 Interactive web experiences. Modern ES6+ features and DOM
                 manipulation.
               </div>
-              <div class="proficiency-indicator">
-                <div class="proficiency-dots">
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot"></div>
-                  <div class="dot"></div>
-                </div>
-                <div class="proficiency-text">Developing</div>
-              </div>
+
               <div class="japanese-accent">動作</div>
             </div>
 
@@ -260,16 +273,6 @@
               <div class="skill-description">
                 Component-based architecture. State management and modern
                 development patterns.
-              </div>
-              <div class="proficiency-indicator">
-                <div class="proficiency-dots">
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot"></div>
-                  <div class="dot"></div>
-                </div>
-                <div class="proficiency-text">Developing</div>
               </div>
               <div class="japanese-accent">反応</div>
             </div>
@@ -286,16 +289,7 @@
                 Backend development and automation. Clean, readable code for
                 various applications.
               </div>
-              <div class="proficiency-indicator">
-                <div class="proficiency-dots">
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot"></div>
-                </div>
-                <div class="proficiency-text">Proficient</div>
-              </div>
+
               <div class="japanese-accent">蛇</div>
             </div>
 
@@ -311,224 +305,145 @@
                 Design systems and prototyping. Collaborative interface design
                 and user experience.
               </div>
-              <div class="proficiency-indicator">
-                <div class="proficiency-dots">
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot filled"></div>
-                  <div class="dot"></div>
-                </div>
-                <div class="proficiency-text">Proficient</div>
-              </div>
+
               <div class="japanese-accent">設計</div>
             </div>
           </div>
         </div>
       </section>
     </div>
-
     <!-- Projects Section -->
     <div class="projects-wrapper">
       <section id="projects" class="projects">
         <div class="container-projects">
-          <div class="indicator-project">
-            <hr />
-            <h2>プロジェクト</h2>
-          </div>
-
           <div class="project-bacground"></div>
 
           <div class="project-intro">
-            <h3>My collection of projects</h3>
-            <p>Here are some of my recent projects and work.</p>
+            <h3>作品集 (Sakuhinshū - Portfolio)</h3>
+            <p>A curated selection of my work</p>
           </div>
 
-          <div class="projects-grid">
-            <div class="project-card main">
+          <div class="curated-container">
+            <div class="featured-project" id="featuredProject">
               <div
-                class="project-image"
+                class="featured-image"
+                id="featuredImage"
                 style="background-image: url('images/project.png')"
               ></div>
-              <div class="project-basic">
-                <h3 class="project-title">Web Base Management System</h3>
-                <p class="project-type">Full-Stack Application</p>
-              </div>
-              <div class="project-details">
-                <p class="project-description">
-                  Modern Web Base management system with secure payments,
-                  inventory management, and admin dashboard.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">PHP</span>
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
+              <div class="featured-content">
+                <div class="featured-main">
+                  <h3 id="featuredTitle">Web Base Management System</h3>
+                  <p class="featured-description" id="featuredDescription">
+                    Modern Web Base management system with secure payments,
+                    inventory management, and admin dashboard.
+                  </p>
+                  <div class="featured-tech" id="featuredTech">
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                  </div>
+                  <div class="featured-links" id="featuredLinks">
+                    <a
+                      href="https://philippineredcross-iloilochapter.org"
+                      class="featured-link"
+                    >
+                      <i class="fas fa-external-link-alt"></i>
+                      Live
+                    </a>
+                    <a
+                      href="https://github.com/Po0mi/prc_management"
+                      class="featured-link"
+                    >
+                      <i class="fab fa-github"></i>
+                      GitHub
+                    </a>
+                  </div>
                 </div>
-                <div class="project-links">
-                  <a
-                    href="https://philippineredcross-iloilochapter.org"
-                    class="project-link"
-                  >
-                    <i class="fas fa-external-link-alt"></i>
-                    Live
-                  </a>
-                  <a
-                    href="https://github.com/Po0mi/prc_management"
-                    class="project-link"
-                  >
-                    <i class="fab fa-github"></i>
-                    GitHub
-                  </a>
+                <div class="featured-meta" id="featuredMeta">
+                  <div class="meta-item">
+                    <span class="meta-label">Type</span>
+                    <span class="meta-value">Full-Stack Application</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-value">Live & Active</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Users</span>
+                    <span class="meta-value">500+ Daily</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="project-card">
-              <div
-                class="project-image"
-                style="background-image: url('images/project2.png')"
-              ></div>
-              <div class="project-basic">
-                <h3 class="project-title">Portfolio Project</h3>
-                <p class="project-type">Website</p>
-              </div>
-              <div class="project-details">
-                <p class="project-description">
+            <!-- Other Projects Grid -->
+            <div class="other-projects" id="otherProjects">
+              <div class="other-project" data-project="1">
+                <div
+                  class="other-project-image"
+                  style="background-image: url('images/project2.png')"
+                ></div>
+                <h4>Portfolio Project</h4>
+                <p class="other-project-type">Website</p>
+                <p class="other-project-desc">
                   Project Portfolio for a friend featuring modern design and
                   interactive elements.
                 </p>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://po0mi.github.io/project"
-                    class="project-link"
-                  >
-                    <i class="fas fa-external-link-alt"></i>
-                    Live
-                  </a>
-                  <a
-                    href="https://github.com/Po0mi/project"
-                    class="project-link"
-                  >
-                    <i class="fab fa-github"></i>
-                    Source
-                  </a>
+                <div class="other-project-tech">
+                  <span class="other-tech-tag">HTML</span>
+                  <span class="other-tech-tag">CSS</span>
+                  <span class="other-tech-tag">JavaScript</span>
                 </div>
               </div>
-            </div>
 
-            <div class="project-card">
-              <div
-                class="project-image"
-                style="background-image: url('images/project3.png')"
-              ></div>
-              <div class="project-basic">
-                <h3 class="project-title">Black Jack Game</h3>
-                <p class="project-type">Game</p>
-              </div>
-              <div class="project-details">
-                <p class="project-description">
+              <div class="other-project" data-project="2">
+                <div
+                  class="other-project-image"
+                  style="background-image: url('images/project3.png')"
+                ></div>
+                <h4>Black Jack Game</h4>
+                <p class="other-project-type">Game</p>
+                <p class="other-project-desc">
                   A simple Black jack game with intuitive UI using Python and
                   modern design principles.
                 </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/Po0mi/Simple-python-blackjack"
-                    class="project-link"
-                  >
-                    <i class="fas fa-download"></i>
-                    Download
-                  </a>
-                  <a
-                    href="https://github.com/Po0mi/Simple-python-blackjack"
-                    class="project-link"
-                  >
-                    <i class="fab fa-github"></i>
-                    Source
-                  </a>
+                <div class="other-project-tech">
+                  <span class="other-tech-tag">Python</span>
                 </div>
               </div>
-            </div>
 
-            <div class="project-card">
-              <div
-                class="project-image"
-                style="background-image: url('images/project4.png')"
-              ></div>
-              <div class="project-basic">
-                <h3 class="project-title">School Project Portfolio</h3>
-                <p class="project-type">Website</p>
-              </div>
-              <div class="project-details">
-                <p class="project-description">
+              <div class="other-project" data-project="3">
+                <div
+                  class="other-project-image"
+                  style="background-image: url('images/project4.png')"
+                ></div>
+                <h4>School Project Portfolio</h4>
+                <p class="other-project-type">Website</p>
+                <p class="other-project-desc">
                   Academic portfolio project showcasing web development skills
                   and design capabilities.
                 </p>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://po0mi.github.io/De-Castro_Finals"
-                    class="project-link"
-                  >
-                    <i class="fas fa-external-link-alt"></i>
-                    Live
-                  </a>
-                  <a
-                    href="https://github.com/Po0mi/De-Castro_Finals"
-                    class="project-link"
-                  >
-                    <i class="fab fa-github"></i>
-                    Source
-                  </a>
+                <div class="other-project-tech">
+                  <span class="other-tech-tag">HTML</span>
+                  <span class="other-tech-tag">CSS</span>
+                  <span class="other-tech-tag">JavaScript</span>
                 </div>
               </div>
-            </div>
 
-            <div class="project-card">
-              <div
-                class="project-image"
-                style="background-image: url('images/project5.jpg')"
-              ></div>
-              <div class="project-basic">
-                <h3 class="project-title">Python Calculator</h3>
-                <p class="project-type">Desktop App</p>
-              </div>
-              <div class="project-details">
-                <p class="project-description">
+              <div class="other-project" data-project="4">
+                <div
+                  class="other-project-image"
+                  style="background-image: url('images/project5.jpg')"
+                ></div>
+                <h4>Python Calculator</h4>
+                <p class="other-project-type">Desktop App</p>
+                <p class="other-project-desc">
                   A fully functional calculator application built with Python
-                  featuring basic arithmetic operations, advanced mathematical
-                  functions, and an intuitive GUI interface using Tkinter.
+                  featuring basic arithmetic operations.
                 </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                </div>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/Po0mi/calculator"
-                    class="project-link"
-                  >
-                    <i class="fas fa-download"></i>
-                    Download
-                  </a>
-                  <a
-                    href="https://github.com/Po0mi/calculator"
-                    class="project-link"
-                  >
-                    <i class="fab fa-github"></i>
-                    Source
-                  </a>
+                <div class="other-project-tech">
+                  <span class="other-tech-tag">Python</span>
                 </div>
               </div>
             </div>
@@ -545,6 +460,7 @@
     <script src="js/scroll.js"></script>
     <script src="js/smooth-scroll.js"></script>
     <script src="js/parallax.js"></script>
-    <script></script>
+    <script src="js/project-script.js"></script>
+    <script src="js/scroll-indicator.js"></script>
   </body>
 </html>
