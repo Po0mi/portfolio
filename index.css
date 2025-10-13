@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Theme-appropriate focus */
+:focus {
+  outline: 2px solid rgba(179, 17, 17, 0.8);
+  outline-offset: 2px;
+  border-radius: 2px; /* Matches your sharp corners */
+}
 @font-face {
   font-family: "Sekaiwo";
   src: url("Sekaiwo-Regular.otf") format("opentype");
@@ -136,12 +142,10 @@
   border-right: 3px solid rgba(179, 17, 17, 0.1);
 }
 
-/* Removed Progress Indicators - Too Busy for Shibui */
 .progress-indicators {
   display: none;
 }
 
-/* Subtle Section Labels */
 .section-label {
   position: absolute;
   right: -60px;
@@ -162,7 +166,6 @@
   color: rgba(179, 17, 17, 0.5);
 }
 
-/* Responsive Design - Shibui Approach */
 @media (max-width: 768px) {
   .evolution-scroll-indicator {
     left: 1rem;
@@ -180,11 +183,11 @@
   }
 
   .meaning-tooltip {
-    display: none; /* Remove on mobile for cleaner experience */
+    display: none;
   }
 
   .section-label {
-    display: none; /* Remove labels on mobile */
+    display: none;
   }
 }
 
@@ -309,7 +312,6 @@ body {
 }
 
 .hero-wrapper {
-  background-image: url("images/wallpaperflare.com_wallpaper.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -321,13 +323,38 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/wallpaperflare.com_wallpaper.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.3) saturate(1.2);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #242424 100%);
   z-index: 0;
-  background-attachment: fixed;
+}
+.projects-wrapper::after,
+.hero-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.008) 10px,
+      rgba(255, 255, 255, 0.008) 11px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.008) 10px,
+      rgba(255, 255, 255, 0.008) 11px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(255, 255, 255, 0.01) 1px,
+      rgba(255, 255, 255, 0.01) 2px
+    );
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 .about-wrapper {
@@ -348,6 +375,7 @@ body {
   filter: brightness(0.1) saturate(1.5);
   z-index: 0;
 }
+
 .projects-wrapper {
   background-size: cover;
   background-position: center;
@@ -359,19 +387,14 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/mountain.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.5) saturate(1.2);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #242424 100%);
   z-index: 0;
-  background-attachment: fixed;
 }
 .projects-wrapper,
 .about-wrapper,
 .hero-wrapper > * {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 .navbar {
   display: flex;
@@ -392,13 +415,14 @@ body {
   padding: 0;
   flex-wrap: wrap;
   position: fixed;
+  margin-right: 25px;
 }
 
 .navbar a {
   text-decoration: none;
   color: rgb(189, 178, 178);
   font-size: clamp(0.5rem, 2vw, 1.1rem);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.1rem;
   transition: all 0.4s;
   font-weight: bold;
 }
@@ -416,6 +440,7 @@ body {
   left: 50%;
   transition: all 0.3s ease;
 }
+
 .projects,
 .hero {
   height: 100vh;
@@ -454,6 +479,18 @@ body {
   padding: 0;
   position: relative;
 }
+.Contacts {
+  height: 70vh;
+  width: 100vw;
+  overflow-y: hidden;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
 .container-projects,
 .container {
@@ -472,17 +509,23 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+.container-contacts {
+  height: 70vh;
+  width: 100vw;
+  overflow: hidden;
+}
 
 .container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 0px 0px;
   grid-auto-flow: row;
   justify-items: center;
   align-items: center;
   position: relative;
 }
+.container-contacts,
 .container-skills,
 .container-about {
   display: grid;
@@ -670,7 +713,7 @@ body {
 
 .sub-text {
   grid-area: 1/3/2/6;
-  font-size: clamp(0.7rem, 2vw, 2rem);
+  font-size: clamp(0.7rem, 2vw, 1.5rem);
   z-index: 2;
   letter-spacing: 1rem;
   font-family: "Semplicità";
@@ -683,7 +726,7 @@ body {
 }
 .sub-text2 {
   grid-area: 1/3/2/6;
-  font-size: clamp(0.7rem, 2vw, 1.3rem);
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
   z-index: 2;
   letter-spacing: 0.5rem;
   font-family: "Semplicità";
@@ -725,6 +768,22 @@ body {
   width: clamp(300px, 40vw, 900px);
   height: clamp(300px, 40vw, 900px);
   background-image: url("skill-kanji.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  justify-self: center;
+  align-self: center;
+  filter: brightness(0.1) saturate(1.2);
+  filter: brightness(0.1) saturate(1.2)
+    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+  opacity: 0.9;
+}
+.contacts-kanji {
+  grid-area: 1/ 5 /8/ 8;
+  width: clamp(300px, 40vw, 1000px);
+  height: clamp(300px, 40vw, 1000px);
+  background-image: url("contacts-kanji.webp");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

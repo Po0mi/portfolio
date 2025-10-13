@@ -76,5 +76,15 @@ function initTextParallax() {
     },
   });
 }
+gsap.to(".contacts-kanji", {
+  yPercent: -12,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".projects",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+});
 
 document.addEventListener("DOMContentLoaded", initTextParallax);
