@@ -192,6 +192,7 @@ section {
   justify-content: center;
   border-bottom: 1px solid var(--border);
 }
+
 .section-label {
   position: absolute;
   bottom: clamp(20px, 4vw, 40px);
@@ -205,7 +206,7 @@ section {
 
 .section-label hr {
   width: 2px;
-  height: 5rem;
+  height: 7rem;
 }
 
 .section-label span {
@@ -302,9 +303,10 @@ section {
 .about-content {
   max-width: 1200px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 4rem;
   align-items: center;
+  justify-content: start;
   text-align: center;
 }
 
@@ -320,6 +322,56 @@ section {
   font-size: clamp(1rem, 2vw, 1.5rem);
   margin-bottom: 1rem;
 }
+button {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  background: #212121;
+  color: white;
+  fill: rgb(155, 153, 153);
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-weight: 1000;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  height: 2em;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+  background: var(--bg);
+}
+
+button:hover .svg-wrapper {
+  transform: scale(1.25);
+  transition: 0.5s linear;
+}
+
+button:hover svg {
+  transform: translateX(2.7em) scale(1.1);
+  fill: #fff;
+}
+
+button:hover span {
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+button:active {
+  transform: scale(0.95);
+}
 
 .skills-grid {
   max-width: 1200px;
@@ -332,34 +384,133 @@ section {
 
 .skill-card {
   border: 1px solid var(--border);
-  padding: 3rem 2rem;
+  padding: 40px 25px;
   text-align: center;
-  transition: all 0.3s;
-  transform-style: preserve-3d;
-  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+}
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.skill-card:hover {
-  border-color: var(--text);
-  transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
-  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+.skill-card:hover::before {
+  opacity: 1;
+  animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+.skill-card:hover::after {
+  transform: scale(1.5) rotate(180deg);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.skill-icon-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.skill-card:hover .skill-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+@keyframes pulse-ring {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
 .skill-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.skill-card:hover .skill-icon {
+  transform: scale(1.1) rotateY(360deg);
 }
 
-.skill-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+.skill-name {
+  font-size: 1rem;
+  font-weight: 100;
+  margin-top: 15px;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
 }
 
-.skill-card p {
-  color: var(--text);
-  font-size: 0.9rem;
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
 }
 
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(227, 79, 38, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* HTML skill card specific styling */
+.skill-card[data-skill="html"]:hover {
+  border-color: rgba(227, 79, 38, 0.5);
+}
+.skill-card[data-skill="css"]:hover {
+  border-color: rgba(21, 114, 182, 0.5);
+}
+.skill-card[data-skill="js"]:hover {
+  border-color: rgba(247, 223, 30, 0.5);
+}
+.skill-card[data-skill="react"]:hover {
+  border-color: rgba(97, 218, 251, 0.5);
+}
+.skill-card[data-skill="python"]:hover {
+  border-color: rgba(55, 118, 171, 0.5);
+}
+.skill-card[data-skill="php"]:hover {
+  border-color: rgba(119, 123, 180, 0.5);
+}
+.skill-card[data-skill="git"]:hover {
+  border-color: rgba(64, 89, 136, 0.5);
+}
+.skill-card[data-skill="figma"]:hover {
+  border-color: rgba(242, 78, 30, 0.5);
+}
 .services-grid {
   max-width: 1200px;
   width: 100%;

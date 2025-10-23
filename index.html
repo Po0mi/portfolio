@@ -7,6 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -45,7 +47,7 @@
     <section class="hero" id="home">
       <div id="canvas-container"></div>
       <div class="hero-content">
-        <h1 class="hero-title">UI/UX<br />PORTFOLIO</h1>
+        <h1 class="hero-title">WEB PORTFOLIO</h1>
         <p class="subtitle">Crafting Digital Experiences</p>
       </div>
       <div class="section-label">
@@ -62,21 +64,39 @@
       <div class="about-content">
         <div class="about-text">
           <h2 class="section-title">About Me</h2>
-          <h3>Creating meaningful digital experiences through design</h3>
+          <h3>Building skills and exploring possibilities in tech</h3>
           <p>
-            Hello, my name is Dan Gabrielle De Castro. I am a 4th-year
-            graduating student at Central Philippine University, currently
-            pursuing my degree in Information Technology. Throughout my academic
-            journey, I have developed a strong foundation in web development,
-            networking, and system design, while also gaining hands-on
-            experience through various projects and internships.
+            Hi, I'm Dan Gabrielle De Castro, a 4th-year Information Technology
+            student at Central Philippine University. I'm passionate about web
+            development, networking, and system design, and I've been building
+            my skills through coursework, personal projects, and internships.
           </p>
           <p>
-            I am passionate about creating innovative and efficient solutions,
-            and I look forward to applying my skills in real-world challenges as
-            I transition into the professional field.
+            I love the problem-solving aspect of technology, whether it's
+            debugging code, designing a network, or creating user-friendly
+            interfaces. As I approach graduation, I'm excited to apply what I've
+            learned to real-world challenges and continue growing as a
+            developer.
           </p>
         </div>
+        <button>
+          <div class="svg-wrapper-1">
+            <div class="svg-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="30"
+                height="30"
+                class="icon"
+              >
+                <path
+                  d="M12 2C12.5523 2 13 2.44772 13 3V13.5858L16.2929 10.2929C16.6834 9.90237 17.3166 9.90237 17.7071 10.2929C18.0976 10.6834 18.0976 11.3166 17.7071 11.7071L12.7071 16.7071C12.3166 17.0976 11.6834 17.0976 11.2929 16.7071L6.29289 11.7071C5.90237 11.3166 5.90237 10.6834 6.29289 10.2929C6.68342 9.90237 7.31658 9.90237 7.70711 10.2929L11 13.5858V3C11 2.44772 11.4477 2 12 2ZM5 17C5 16.4477 4.55228 16 4 16C3.44772 16 3 16.4477 3 17V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V17C21 16.4477 20.5523 16 20 16C19.4477 16 19 16.4477 19 17V19C19 19.5523 18.5523 20 18 20H6C5.44772 20 5 19.5523 5 19V17Z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>Download CV</span>
+        </button>
       </div>
     </section>
 
@@ -87,38 +107,82 @@
       </div>
       <div style="width: 100%">
         <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon">◐</div>
-            <h3>UI Design</h3>
-            <p>
-              Creating beautiful and functional interfaces with attention to
-              every pixel
-            </p>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">◑</div>
-            <h3>UX Research</h3>
-            <p>
-              Understanding user needs through research and data-driven insights
-            </p>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">◒</div>
-            <h3>Prototyping</h3>
-            <p>
-              Building interactive prototypes to test and validate design
-              concepts
-            </p>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon">◓</div>
-            <h3>Branding</h3>
-            <p>
-              Developing cohesive brand identities that tell compelling stories
-            </p>
-          </div>
+      <div class="skills-grid">
+    
+            <div class="skill-card" data-skill="html">
+                <div class="particles"></div>
+                <div class="skill-icon-wrapper">
+                    <!-- Use your downloaded SVG file -->
+                    <img src="images/html-5-svgrepo-com.svg" alt="HTML5" class="skill-icon">
+                </div>
+                <div class="skill-name">HTML</div>
+            </div>
+
+         
+            <div class="skill-card" data-skill="css">
+                <div class="particles"></div>
+                <div class="skill-icon-wrapper">
+                    <!-- Use your downloaded SVG file -->
+                    <img src="images/css-3-svgrepo-com.svg" alt="CSS3" class="skill-icon">
+                </div>
+                <div class="skill-name">CSS</div>
+            </div>
+
+               <div class="skill-card" data-skill="js">
+                <div class="particles"></div>
+                <div class="skill-icon-wrapper">
+                    <!-- Use your downloaded SVG file -->
+                    <img src="images/javascript-svgrepo-com.svg" alt="CSS3" class="skill-icon">
+                </div>
+                <div class="skill-name">JavaScript</div>
+            </div>
+
+               <div class="skill-card" data-skill="react">
+                <div class="particles"></div>
+                <div class="skill-icon-wrapper">
+                    <!-- Use your downloaded SVG file -->
+                    <img src="images/react-svgrepo-com.svg" alt="CSS3" class="skill-icon">
+                </div>
+                <div class="skill-name">React</div>
+            </div>
+
+               <div class="skill-card" data-skill="python">
+                <div class="particles"></div>
+                <div class="skill-icon-wrapper">
+                    <!-- Use your downloaded SVG file -->
+                    <img src="images/python-svgrepo-com.svg" alt="CSS3" class="skill-icon">
+                </div>
+                <div class="skill-name">Python</div>
+            </div>
+
+                <div class="skill-card" data-skill="php">
+                <div class="particles"></div>
+                <div class="skill-icon-wrapper">
+                    <!-- Use your downloaded SVG file -->
+                    <img src="images/php-svgrepo-com.svg" alt="CSS3" class="skill-icon">
+                </div>
+                <div class="skill-name">PHP</div>
+            </div>
+
+             <div class="skill-card" data-skill="git">
+                <div class="particles"></div>
+                <div class="skill-icon-wrapper">
+                    <!-- Use your downloaded SVG file -->
+                    <img src="images/github-color-svgrepo-com.svg" alt="CSS3" class="skill-icon">
+                </div>
+                <div class="skill-name">Github</div>
+            </div>
+
+              <div class="skill-card" data-skill="figma">
+                <div class="particles"></div>
+                <div class="skill-icon-wrapper">
+                    <!-- Use your downloaded SVG file -->
+                    <img src="images/figma-svgrepo-com.svg" alt="CSS3" class="skill-icon">
+                </div>
+                <div class="skill-name">Figma</div>
+            </div>
         </div>
+    </div>
       </div>
     </section>
 
@@ -132,26 +196,23 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-number">01</div>
-            <h3>Product Design</h3>
+            <h3>Website Development</h3>
             <p>
-              End-to-end product design from concept to final implementation,
-              ensuring seamless user experiences across all touchpoints.
+              Building custom websites for small businesses and personal projects
             </p>
           </div>
           <div class="service-card">
             <div class="service-number">02</div>
-            <h3>User Research</h3>
+            <h3>Web Application Development</h3>
             <p>
-              Comprehensive user research and testing to inform design decisions
-              and validate solutions with real users.
+              Creating interactive web apps using React and modern frameworks
             </p>
           </div>
           <div class="service-card">
             <div class="service-number">03</div>
-            <h3>Design Systems</h3>
+            <h3>Website Maintenance</h3>
             <p>
-              Creating scalable design systems that maintain consistency and
-              accelerate your team's workflow.
+            Updates, bug fixes, and performance optimization
             </p>
           </div>
         </div>
@@ -263,6 +324,7 @@
     <footer>
       <p>&copy; 2025 UI/UX Designer Portfolio. All rights reserved.</p>
     </footer>
+    <script src="/js/skills.js"></script>
     <script>
       gsap.registerPlugin(ScrollTrigger);
 
@@ -523,17 +585,6 @@
         );
       });
 
-      gsap.from(".contact-content h2", {
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-      });
 
       gsap.from(".contact-content p", {
         scrollTrigger: {
@@ -548,19 +599,7 @@
         ease: "power3.out",
       });
 
-      gsap.from(".contact-link", {
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        delay: 0.4,
-        ease: "power3.out",
-      });
+
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
