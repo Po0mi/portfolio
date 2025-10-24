@@ -59,6 +59,12 @@
           Specializing in user-centered design and interactive interfaces.
         </p>
       </div>
+      <div class="scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span class="scroll-text">Explore</span>
+      </div>
     </section>
 
     <section id="about">
@@ -784,6 +790,16 @@
           }
         });
       });
+
+      // Scroll indicator click
+      document
+        .querySelector(".scroll-indicator")
+        .addEventListener("click", () => {
+          document.querySelector("#about").scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
 
       // ============================================
       // SECTION INDICATOR ACTIVE STATE
