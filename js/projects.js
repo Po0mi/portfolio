@@ -8,7 +8,7 @@ const projects = [
     role: "UI/UX Designer",
     duration: "3 months",
     tech: "Figma, React Native",
-    image: "./images/project.png" // Add your image path
+    image: "./images/project.png", // ✅ Added comma
     liveUrl: "#",
     codeUrl: "#",
   },
@@ -20,7 +20,7 @@ const projects = [
     role: "Full Stack Developer",
     duration: "4 months",
     tech: "React, D3.js, Node.js",
-    image: "images/dataviz.jpg", // Add your image path
+    image: "./images/dataviz.jpg", // ✅ Made consistent
     liveUrl: "#",
     codeUrl: "#",
   },
@@ -32,7 +32,7 @@ const projects = [
     role: "Frontend Developer",
     duration: "2 months",
     tech: "HTML, CSS, JavaScript",
-    image: "images/minimalstore.jpg", // Add your image path
+    image: "./images/minimalstore.jpg", // ✅ Made consistent
     liveUrl: "#",
     codeUrl: "#",
   },
@@ -44,7 +44,7 @@ const projects = [
     role: "Product Designer",
     duration: "5 months",
     tech: "React, Firebase, WebRTC",
-    image: "images/teamsync.jpg", // Add your image path
+    image: "./images/teamsync.jpg", // ✅ Made consistent
     liveUrl: "#",
     codeUrl: "#",
   },
@@ -56,7 +56,7 @@ const projects = [
     role: "Mobile Developer",
     duration: "3 months",
     tech: "Flutter, Firebase",
-    image: "images/wellness.jpg", // Add your image path
+    image: "./images/wellness.jpg", // ✅ Made consistent
     liveUrl: "#",
     codeUrl: "#",
   },
@@ -68,7 +68,7 @@ const projects = [
     role: "Web Developer",
     duration: "2 months",
     tech: "React, GSAP, Three.js",
-    image: "images/creativefolio.jpg", // Add your image path
+    image: "./images/creativefolio.jpg", // ✅ Made consistent
     liveUrl: "#",
     codeUrl: "#",
   },
