@@ -168,10 +168,9 @@ nav {
 
 .indicator-dot {
   position: relative;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: rgba(255, 255, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -334,55 +333,217 @@ section {
   font-size: clamp(1rem, 2vw, 1.5rem);
   margin-bottom: 1rem;
 }
-button {
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  background: #212121;
+/* Subtle Grid Pattern Background */
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.4;
+}
+
+/* Animated Grid Glow Effect */
+.grid-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 50%
+  );
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Geometric Accent Elements */
+.geometric-accent {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: 10%;
+  right: 10%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  bottom: 15%;
+  left: 8%;
+  border-color: rgba(255, 255, 255, 0.25);
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.hexagon {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 5%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: rotate 20s linear infinite;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 173px solid rgba(255, 255, 255, 0.15);
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.line-1 {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  top: 30%;
+  right: 20%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.line-2 {
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  bottom: 25%;
+  right: 15%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.download-btn-v1 {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  background: transparent;
   color: white;
-  fill: rgb(155, 153, 153);
-  padding: 0.7em 1em;
-  padding-left: 0.9em;
+  fill: rgba(255, 255, 255, 0.7);
+  padding: 0.9em 1.8em;
+  padding-left: 1.2em;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5em;
   cursor: pointer;
-  border: none;
-  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-button span {
+.download-btn-v1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: left 0.4s ease;
+}
+
+.download-btn-v1:hover::before {
+  left: 100%;
+}
+
+.download-btn-v1 .icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.download-btn-v1 svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.download-btn-v1 span {
   display: block;
-  margin-left: 0.3em;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
-button svg {
-  display: block;
-  height: 2em;
-  transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
+.download-btn-v1:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-button:hover {
-  background: var(--bg);
-}
-
-button:hover .svg-wrapper {
-  transform: scale(1.25);
-  transition: 0.5s linear;
-}
-
-button:hover svg {
-  transform: translateX(2.7em) scale(1.1);
+.download-btn-v1:hover svg {
   fill: #fff;
+  transform: translateY(2px);
 }
 
-button:hover span {
-  opacity: 0;
-  transition: 0.5s linear;
-}
-
-button:active {
-  transform: scale(0.95);
+.download-btn-v1:active {
+  transform: translateY(0);
 }
 
 .skills-grid {
@@ -632,45 +793,246 @@ button:active {
   color: #999;
 }
 
-.contact-content {
-  max-width: 800px;
-  width: 100%;
-  text-align: center;
-}
-
-.contact-content h2 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 2rem;
-}
-
-.contact-content p {
-  color: #999;
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-}
-
-.contact-links {
+.contact-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 20px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
 }
 
-.contact-link {
-  padding: 1rem 2.5rem;
-  border: 1px solid var(--border);
-  color: var(--text);
-  text-decoration: none;
+.section-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Side - Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.info-icon {
+  width: 24px;
+  height: 24px;
+  fill: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-  transition: all 0.3s;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
-.contact-link:hover {
-  border-color: var(--text);
-  background: var(--text);
-  color: var(--bg);
+.info-value {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.info-value a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-value a:hover {
+  color: #fff;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-link:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.7);
+  transition: fill 0.3s ease;
+}
+
+.social-link:hover svg {
+  fill: #fff;
+}
+
+/* Right Side - Contact Form */
+.contact-form-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submit-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrapper {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+  }
 }
 
 footer {
@@ -686,7 +1048,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -864,11 +1226,13 @@ footer {
   position: absolute;
   top: 20px;
   right: 20px;
-  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
-  font-size: 1rem;
+  font-size: 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
@@ -1124,7 +1488,77 @@ footer {
 .scroll-indicator:hover .scroll-text {
   color: rgba(255, 255, 255, 0.9);
 }
+/* Add this to your stylesheet */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
 
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.7);
+  transition: fill 0.3s ease;
+}
+
+.back-to-top:hover svg {
+  fill: #fff;
+}
+
+/* Optional scroll progress indicator */
+.back-to-top::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    rgba(255, 255, 255, 0.6) var(--progress, 0%),
+    transparent var(--progress, 0%)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-top:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
 /* Animations */
 @keyframes fadeInScroll {
   from {
