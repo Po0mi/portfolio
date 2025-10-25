@@ -8,7 +8,7 @@ const projects = [
     role: "UI/UX Designer",
     duration: "3 months",
     tech: "Figma, React Native",
-    image: "images/project.png", // Add your image path
+    image: "./images/project.png" // Add your image path
     liveUrl: "#",
     codeUrl: "#",
   },
