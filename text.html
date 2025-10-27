@@ -1,150 +1,194 @@
-<section class="about" id="about">
-  <div class="about-inner">
-    <!-- LEFT: Profile image -->
-    <div class="about-photo" role="img" aria-label="Profile photo">
-      <img src="https://via.placeholder.com/400x500" alt="Profile photo" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, device-scale=1.0" />
+    <title>Section Indicator - Numbers</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Section Styles */
+      section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+      }
+
+      #section1 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      #section2 {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+      #section3 {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      }
+      #section4 {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      }
+      #section5 {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      }
+
+      /* Section Indicator Container */
+      .section-indicator {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 1000;
+      }
+
+      /* Indicator Number Style */
+      .indicator-number {
+        position: relative;
+        width: 35px;
+        height: 35px;
+
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        border: 2px solid transparent;
+      }
+
+      /* Tooltip Label */
+      .indicator-number span {
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px 15px;
+        border-radius: 4px;
+        font-weight: normal;
+      }
+
+      /* Hover Effect */
+      .indicator-number:hover {
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(1.15);
+        border-color: rgba(255, 255, 255, 0.8);
+      }
+
+      .indicator-number:hover span {
+        opacity: 1;
+      }
+
+      /* Active State */
+      .indicator-number.active {
+        background: #fff;
+        color: #667eea;
+        border-color: #fff;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        transform: scale(1.2);
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .section-indicator {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sections -->
+    <section id="section1">
+      <h1>Section 1</h1>
+    </section>
+
+    <section id="section2">
+      <h1>Section 2</h1>
+    </section>
+
+    <section id="section3">
+      <h1>Section 3</h1>
+    </section>
+
+    <section id="section4">
+      <h1>Section 4</h1>
+    </section>
+
+    <section id="section5">
+      <h1>Section 5</h1>
+    </section>
+
+    <!-- Section Indicator with Numbers -->
+    <div class="section-indicator">
+      <a href="#section1" class="indicator-number">
+        1
+        <span>Introduction</span>
+      </a>
+      <a href="#section2" class="indicator-number">
+        2
+        <span>About</span>
+      </a>
+      <a href="#section3" class="indicator-number">
+        3
+        <span>Services</span>
+      </a>
+      <a href="#section4" class="indicator-number">
+        4
+        <span>Portfolio</span>
+      </a>
+      <a href="#section5" class="indicator-number">
+        5
+        <span>Contact</span>
+      </a>
     </div>
 
-    <!-- RIGHT: Text -->
-    <div class="about-text">
-      <h2 class="about-kanji">自己紹介</h2>
-      <h3 class="about-heading">About Me</h3>
-      <p>
-        I’m Dan Gabrielle De Castro, a designer and developer inspired by
-        Japanese minimalism. I create calm, balanced, and intentional digital
-        experiences with attention to detail and harmony.
-      </p>
-      <p>
-        My focus lies in front-end development, UI/UX design, and creating
-        portfolios that breathe with Wa-inspired aesthetics.
-      </p>
-      <a href="#projects" class="about-btn">View My Work</a>
-    </div>
-  </div>
-</section>
+    <script>
+      // ============================================
+      // SECTION INDICATOR ACTIVE STATE
+      // ============================================
+      const sections = document.querySelectorAll("section");
+      const indicatorNumbers = document.querySelectorAll(".indicator-number");
 
-<style>
-  :root {
-    --accent: #b31111;
-    --ink: #2b2b2b;
-    --paper: #fbf7f2;
-  }
+      window.addEventListener("scroll", () => {
+        let current = "";
 
-  /* Section wrapper */
-  .about {
-    position: relative;
-    padding: 80px 20px;
-    background: var(--paper);
-    overflow: hidden;
-  }
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
 
-  /* subtle seigaiha wave pattern */
-  .about::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(
-      circle at 10px 10px,
-      rgba(0, 0, 0, 0.05) 1px,
-      transparent 0
-    );
-    background-size: 40px 40px;
-    opacity: 0.06;
-    pointer-events: none;
-  }
-
-  /* Grid layout like a shoji panel */
-  .about-inner {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Profile photo styling */
-  .about-photo img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    object-fit: cover;
-  }
-
-  /* Text card */
-  .about-text {
-    background: rgba(255, 255, 255, 0.75);
-    padding: 40px;
-    border-radius: 12px;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Kanji subtitle */
-  .about-kanji {
-    font-size: 20px;
-    color: var(--accent);
-    margin: 0;
-    letter-spacing: 0.2em;
-    font-weight: 600;
-  }
-
-  /* Heading with brush underline */
-  .about-heading {
-    font-size: 32px;
-    font-weight: 700;
-    margin: 8px 0 20px;
-    position: relative;
-    display: inline-block;
-  }
-
-  .about-heading::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 6px;
-    background: url("https://svgshare.com/i/14oJ.svg") no-repeat center/cover;
-    opacity: 0.8;
-  }
-
-  /* Paragraphs */
-  .about-text p {
-    margin-bottom: 16px;
-    line-height: 1.6;
-    color: var(--ink);
-  }
-
-  /* Button styled like washi paper with a red seal hover */
-  .about-btn {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 12px 20px;
-    background: transparent;
-    border: 2px solid var(--accent);
-    border-radius: 8px;
-    font-weight: 600;
-    color: var(--accent);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .about-btn:hover {
-    background: var(--accent);
-    color: white;
-    transform: translateY(-2px);
-  }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .about-inner {
-      grid-template-columns: 1fr;
-    }
-    .about-photo {
-      order: -1;
-    }
-  }
-</style>
+        indicatorNumbers.forEach((number) => {
+          number.classList.remove("active");
+          if (number.getAttribute("href") === `#${current}`) {
+            number.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
